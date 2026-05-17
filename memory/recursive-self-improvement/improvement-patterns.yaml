@@ -1,0 +1,34 @@
+# Improvement Pattern Library
+# Validated reusable improvement templates extracted from episodic memory
+# Patterns added after >= 3 successful episodes with condition_accuracy >= 0.80
+# Updated: monthly pattern extraction run
+
+patterns: []
+
+# Schema for each pattern:
+# - pattern_id: PAT-{NNN}
+#   domain: WORKFLOW | ORCHESTRATION | RUNTIME | GOVERNANCE | ORG | CAPABILITY | META
+#   opportunity_type: BOTTLENECK | WASTE | QUALITY_GAP | CAPABILITY_GAP | STRUCTURAL | etc.
+#   solution_type: PARALLELIZATION | THRESHOLD_ADJUSTMENT | ROUTING_CHANGE | etc.
+#   description: string
+#   success_rate: float (fraction of episodes with this triple that succeeded)
+#   optimal_conditions:
+#     - string (context condition that predicts success)
+#   contraindications:
+#     - string (context condition that predicts failure)
+#   avg_improvement_pct: float (median actual improvement across successful episodes)
+#   episode_count: integer
+#   episode_ids:
+#     - EP-{NNN}
+#   last_validated: ISO8601
+#   last_used: ISO8601 | null
+#   times_used: integer
+#   times_succeeded: integer
+
+# Pattern library statistics
+library_stats:
+  total_patterns: 0
+  validated_patterns: 0
+  last_extraction_run: null
+  next_extraction_due: null
+  domains_covered: []

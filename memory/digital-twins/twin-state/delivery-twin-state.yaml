@@ -1,0 +1,53 @@
+# Delivery Twin State
+# Authority: digital-twins/delivery-twin.md
+# Updated by: twin-sync.md (event-driven + scheduled batch)
+# Freshness target: 30 minutes
+
+twin_id: delivery-twin
+status: UNINITIALIZED         # UNINITIALIZED | SYNCING | STABLE | STALE | DEGRADED
+last_sync: null
+last_full_sync: null
+sync_generation: 0
+
+roadmap:
+  items: []
+  total_items: 0
+  at_risk_items: 0
+  blocked_items: 0
+
+sprint_state:
+  current_sprint_id: null
+  sprint_start: null
+  sprint_end: null
+  planned_points: null
+  completed_points: null
+  remaining_points: null
+  working_days_remaining: null
+  backlog_item_count: null
+  carry_over_rate_history: []
+  velocity_history: []           # List of {sprint_id, points_completed, capacity_factor}
+  velocity_stats:
+    p10: null
+    p50: null
+    p90: null
+    trend_direction: null        # ACCELERATING | STABLE | DECELERATING
+  sprint_health_score: null
+  sprint_health_score_history: []
+
+dependency_graph:
+  critical_path_items: []
+  critical_path_duration_days: null
+  critical_path_float_days: null
+  at_risk_dependencies: 0
+  at_risk_trend_7d: null
+  dependency_clusters: []
+
+release_pipeline: []            # List of active ReleaseRiskAssessment summaries
+
+delivery_health:
+  delivery_frequency: null
+  lead_time_for_changes_days: null
+  change_failure_rate: null
+  forecast_accuracy:
+    calibration_rate: null       # Fraction of actuals within p10-p90
+    mae_days: null               # Mean absolute error vs p50 forecast

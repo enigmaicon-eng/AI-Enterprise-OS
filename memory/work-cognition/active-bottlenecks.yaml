@@ -1,0 +1,7 @@
+active_bottlenecks:
+  total_open: 0
+  by_severity: {CRITICAL: 0, MAJOR: 0, MODERATE: 0, MINOR: 0}
+  by_class: {}
+  structural_count: 0
+  estimated_throughput_impact_pct: 0
+  bottlenecks: []

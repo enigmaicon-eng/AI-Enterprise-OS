@@ -1,0 +1,166 @@
+# Adaptive Cognition — Core Data Schemas
+# ID: AC-SCHEMA-001 | Version: 1.0.0 | Updated: 2026-05-17
+
+---
+
+# ─── REFLECTION EVENT ─────────────────────────────────────────────────────────
+reflection_event:
+  required:
+    - event_id         # UUID, RE-YYYYMMDD-NNNN
+    - timestamp        # ISO 8601
+    - trigger_type     # workflow_completion | failure | escalation | governance_breach | collaboration
+    - workflow_id      # Reference to execution-ledger.jsonl entry
+    - agent_ids        # List of agents involved
+    - outcome_class    # SUCCESS | PARTIAL | FAILURE | BREACH | TIMEOUT
+    - expected_outcome # What was expected (from workflow definition)
+    - actual_outcome   # What actually happened
+    - deviation_score  # float [-1.0, +1.0]; negative = worse than expected
+    - deviation_class  # POSITIVE | NEUTRAL | NEGATIVE | BREACH
+    - reflection_depth # SURFACE | MODERATE | DEEP (determines analysis compute)
+    - governance_scope # OPERATIONAL | STRATEGIC | GOVERNANCE | CONSTITUTIONAL
+    - analyst_agent    # Agent ID that produced this reflection
+    - hash             # Ed25519 hash for audit chain integrity
+  optional:
+    - root_causes      # List of identified contributing factors
+    - contributing_context  # Environmental factors at time of execution
+    - comparable_events     # List of event_ids from prior similar events
+    - lesson_candidate      # bool: should this be proposed as a learning record?
+    - notes
+
+# ─── HEURISTIC RECORD ─────────────────────────────────────────────────────────
+heuristic_record:
+  required:
+    - heuristic_id     # Matches key in governance.md heuristic bound registry
+    - version          # Monotonically increasing integer
+    - value            # Current value (type matches heuristic definition)
+    - previous_value   # Prior value (for rollback)
+    - activation_time  # ISO 8601
+    - source_event_ids # Reflection events that drove this change
+    - confidence       # float [0.0, 1.0] — confidence in proposed change
+    - within_bounds    # bool: validated against governance.md bounds
+    - human_approved   # bool: required for governance-scope changes
+    - approver_id      # Agent or human ID if human_approved = true
+    - rollback_expires # Date after which rollback is no longer guaranteed
+    - hash             # Ed25519 hash
+  optional:
+    - simulation_run_id    # Digital twin simulation validating this change
+    - simulation_outcome   # Result of simulation
+    - notes
+
+# ─── LEARNING RECORD ──────────────────────────────────────────────────────────
+learning_record:
+  required:
+    - learning_id      # UUID, LR-YYYYMMDD-NNNN
+    - timestamp        # ISO 8601
+    - learning_type    # PATTERN | LESSON | FAILURE_CLASS | COLLABORATION_INSIGHT | INSTITUTIONAL
+    - source_event_ids # List of reflection_event IDs that produced this learning
+    - pattern_strength # int: how many events contributed (≥ reflection_pattern_threshold)
+    - scope            # AGENT | PROJECT | PORTFOLIO | ENTERPRISE
+    - summary          # One-sentence description of what was learned
+    - evidence         # Structured evidence supporting the learning
+    - confidence       # float [0.0, 1.0]
+    - actionable       # bool: can this drive a heuristic change?
+    - status           # PROPOSED | VALIDATED | ACTIVE | ARCHIVED | FLAGGED_FOR_REVIEW
+    - hash             # Ed25519 hash
+  optional:
+    - affected_heuristics   # Which heuristics this learning informs
+    - knowledge_unit_id     # If promoted to knowledge base
+    - linked_failures       # Related failure records
+    - notes
+
+# ─── AGENT IDENTITY PROFILE ───────────────────────────────────────────────────
+agent_identity_profile:
+  required:
+    - agent_id             # Canonical agent ID from agent registry
+    - profile_version      # Monotonically increasing
+    - last_updated         # ISO 8601
+    - execution_count      # Total executions in profile
+    - domain_strengths     # Map of domain → confidence score
+    - collaboration_affinity  # Map of agent_id → collaboration quality score
+    - escalation_history   # Summary: count, rate, trigger_types
+    - preference_vector    # Accumulated execution preferences (bounded)
+    - anomaly_flags        # Any detected behavioral anomalies
+    - hash                 # Ed25519 hash
+  optional:
+    - performance_trend    # 30/90/180-day trend
+    - notable_successes    # Up to 5 notable successes (for institutional memory)
+    - governance_record    # Summary of governance interactions
+    - notes
+
+# ─── COLLABORATION RECORD ─────────────────────────────────────────────────────
+collaboration_record:
+  required:
+    - record_id        # UUID, CR-YYYYMMDD-NNNN
+    - timestamp        # ISO 8601
+    - agent_a          # First agent ID
+    - agent_b          # Second agent ID
+    - workflow_id      # Execution context
+    - interaction_type # HANDOFF | DELEGATION | PEER_REVIEW | CO_EXECUTION | ESCALATION
+    - quality_score    # float [0.0, 1.0]
+    - friction_detected  # bool
+    - friction_types   # List: CONTEXT_GAP | AUTHORITY_CONFLICT | OUTPUT_MISMATCH | etc.
+    - resolution       # How friction was resolved (if applicable)
+    - trust_delta      # Change to collaboration trust weight (bounded)
+    - hash             # Ed25519 hash
+  optional:
+    - handoff_quality_score  # If interaction_type = HANDOFF
+    - delegation_outcome     # If interaction_type = DELEGATION
+    - notes
+
+# ─── REASONING LINEAGE RECORD ─────────────────────────────────────────────────
+reasoning_lineage_record:
+  required:
+    - lineage_id       # UUID, RL-YYYYMMDD-NNNN
+    - timestamp        # ISO 8601
+    - decision_id      # Reference to decision-log.jsonl entry
+    - agent_id         # Decision-making agent
+    - decision_type    # ROUTING | DELEGATION | ESCALATION | STRATEGY | ARCHITECTURE
+    - rationale        # Structured reasoning: context, options_considered, selected, why
+    - confidence_at_decision  # float [0.0, 1.0]
+    - heuristics_applied      # Which active heuristics influenced this decision
+    - outcome_at_t30   # Decision outcome at 30 days (back-filled)
+    - outcome_at_t90   # Decision outcome at 90 days (back-filled)
+    - lineage_parent   # Prior decision this builds on (if applicable)
+    - hash             # Ed25519 hash
+  optional:
+    - counterfactual   # What would have happened with alternative decisions (simulation)
+    - inherited_from   # reasoning_lineage_record ID this reasoning pattern was learned from
+    - notes
+
+# ─── STRATEGIC MEMORY ENTRY ───────────────────────────────────────────────────
+strategic_memory_entry:
+  required:
+    - memory_id        # UUID, SM-YYYYMMDD-NNNN
+    - timestamp        # ISO 8601
+    - memory_type      # PORTFOLIO_LESSON | EXECUTIVE_INSIGHT | ENTERPRISE_PATTERN | LONG_HORIZON
+    - horizon          # IMMEDIATE | QUARTERLY | ANNUAL | MULTI_YEAR
+    - summary          # Concise description
+    - evidence_ids     # Source reflection/learning record IDs
+    - confidence       # float [0.0, 1.0]
+    - relevance_domains  # List of applicable business/technical domains
+    - status           # ACTIVE | ARCHIVED | SUPERSEDED
+    - review_at        # Next scheduled human review date
+    - hash             # Ed25519 hash
+  optional:
+    - related_decisions  # Decision IDs this memory informs
+    - contradicts        # Memory IDs this may contradict (triggers conflict review)
+    - knowledge_unit_id  # If promoted to knowledge base
+    - notes
+
+# ─── COGNITIVE LINEAGE RECORD ─────────────────────────────────────────────────
+cognitive_lineage_record:
+  required:
+    - lineage_id       # UUID, CL-YYYYMMDD-NNNN
+    - timestamp        # ISO 8601
+    - lineage_type     # AGENT_EVOLUTION | GOVERNANCE_EVOLUTION | ORCHESTRATION_EVOLUTION | REASONING_INHERITANCE
+    - subject_id       # Agent ID or system component ID
+    - from_state       # Prior state (heuristic values, capabilities, trust scores)
+    - to_state         # New state
+    - trigger          # What caused the evolution
+    - source_learning_ids  # Learning records that drove this evolution
+    - human_milestone  # bool: was a human milestone review required?
+    - milestone_approver   # If human_milestone = true
+    - hash             # Ed25519 hash
+  optional:
+    - inherited_by     # Other agents/systems that inherited this change
+    - notes

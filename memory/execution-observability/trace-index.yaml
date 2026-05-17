@@ -1,0 +1,5 @@
+trace_index:
+  last_updated: null
+  total_traces: 0
+  traces: {}
+  # Each entry: trace_id → {definition_id, status, started_at, duration_ms, critical_path_ms}

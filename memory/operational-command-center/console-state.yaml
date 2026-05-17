@@ -1,0 +1,43 @@
+last_updated: "2026-05-14T00:00:00Z"
+
+# Current console state
+last_refreshed: null
+refresh_interval_seconds: 15
+
+# Health overview (populated by refresh)
+health_overview:
+  operational_score: null
+  governance_score: null
+  orchestration_score: null
+  org_health_score: null
+  trend_operational: null
+  trend_governance: null
+
+# Workflow summary
+workflow_summary:
+  total_active: 0
+  queued: 0
+  at_risk_slo: 0
+  stalled: 0
+  paused: 0
+  critical_priority: 0
+
+# Active alerts
+active_alerts:
+  critical: []
+  high: []
+  medium: []
+
+# Governance snapshot
+governance_snapshot:
+  pending_approvals: 0
+  pending_attestations: 0
+  policy_drift_events: 0
+  constitutional_evaluations_last_hour: 0
+  compliance_score: null
+
+# Recent interventions (last 20)
+recent_interventions: []
+
+# Active alert suppressions
+active_suppressions: []

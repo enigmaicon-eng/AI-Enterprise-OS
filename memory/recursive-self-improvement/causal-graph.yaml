@@ -1,0 +1,42 @@
+# Causal Graph
+# Signal causal relationships used by the analysis engine
+# Refreshed weekly; validated against observed outcomes
+# Granger causality threshold: p < 0.05
+
+graph_metadata:
+  version: 1
+  last_refreshed: null
+  next_refresh_due: null
+  edge_count: 0
+  validated_edge_count: 0
+  source_signals_covered: 0
+
+# Causal edges
+# Each edge: cause signal → effect signal with lag, strength, and confidence
+edges: []
+# Schema:
+# - edge_id: CE-{NNN}
+#   cause_signal: string (signal name from observation-layer)
+#   cause_source: string (system providing the signal)
+#   effect_signal: string
+#   effect_source: string
+#   lag_hours: float (how many hours after cause does effect appear?)
+#   strength: float (0.0-1.0; Granger F-statistic normalized)
+#   confidence: float (0.0-1.0; from statistical test)
+#   direction: POSITIVE | NEGATIVE  (does cause increase or decrease effect?)
+#   validated: boolean
+#   validation_method: GRANGER | DIFFERENCE_IN_DIFFERENCES | STRUCTURAL_DAG | MANUAL
+#   episode_support:
+#     - EP-{NNN}  (improvement episodes that confirm this edge)
+#   first_observed: ISO8601
+#   last_validated: ISO8601
+
+# Known causal clusters (groups of signals that causally interact)
+clusters: []
+# Schema:
+# - cluster_id: CC-{NNN}
+#   name: string
+#   domain: string
+#   signals:
+#     - string
+#   description: string

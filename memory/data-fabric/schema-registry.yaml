@@ -1,0 +1,5 @@
+schema_registry:
+  total_schemas: 0
+  by_compatibility: {BACKWARD: 0, FORWARD: 0, FULL: 0}
+  schemas: []
+  # Schema: schema_id, entity_id, version, fields[], compatibility, registered_at, status

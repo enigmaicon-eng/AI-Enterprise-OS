@@ -1,0 +1,7 @@
+governance_policy_state:
+  active_policies: []
+  last_policy_review: null
+  open_violations: 0
+  erasure_requests: {open: 0, completed_30d: 0}
+  legal_holds: 0
+  compliance_reports: {gdpr_art30_last_updated: null, eu_ai_act_last_audit: null}

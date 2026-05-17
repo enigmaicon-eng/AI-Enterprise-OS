@@ -1,0 +1,23 @@
+last_updated: "2026-05-14T00:00:00Z"
+
+# Current dependency map
+current_map_id: null
+current_map_generated_at: null
+
+# Active dependency counts by type
+active_dependencies:
+  ARTIFACT_DEPENDENCY: 0
+  AGENT_CONFLICT: 0
+  SLO_CHAIN: 0
+  DATA_PIPELINE: 0
+  GATE_DEPENDENCY: 0
+  APPROVAL_POOL: 0
+
+# Blocking dependencies (currently blocking downstream workflows)
+blocking_dependencies: []
+
+# Critical chains detected
+critical_chains: []
+
+# Blast radius analyses (recent)
+recent_blast_radius_analyses: []

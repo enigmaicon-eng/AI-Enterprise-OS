@@ -1,0 +1,18 @@
+last_updated: "2026-05-14T00:00:00Z"
+
+# Latest org health metric snapshot
+latest_snapshot: null
+# Structure when populated:
+# {window_start, window_end, utilization, queues, escalations, decisions, knowledge, generated_at}
+
+# Org utilization history (per org, used for baseline computation)
+utilization_history: {}
+# Structure: org_id → [{timestamp, avg_utilization}]
+
+# Escalation baseline (per org, rolling 7-day average)
+escalation_rate_baselines: {}
+# Structure: org_id → baseline_rate
+
+# Active org stress signals
+active_stress_signals: []
+# Structure: [{org_id, stress_indicator, current_value, threshold, detected_at}]

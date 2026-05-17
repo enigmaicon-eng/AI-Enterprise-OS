@@ -1,0 +1,6 @@
+api_keys:
+  total_issued: 0
+  active: 0
+  revoked: 0
+  records: []
+# No secrets stored here — only key_id, tier, team_id, created_at, last_used, status

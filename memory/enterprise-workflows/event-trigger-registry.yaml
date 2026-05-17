@@ -1,0 +1,59 @@
+# Enterprise Event Trigger Registry
+# Managed by WF-022 (Event-Driven Workflow Orchestration)
+# Each entry maps an enterprise event → workflow initiation
+
+schema_version: "1.0.0"
+last_updated: null
+
+registered_triggers:
+  - trigger_id: "TRG-001"
+    event_type: "enterprise.incidents.SEV1.detected"
+    trigger_workflow: "WF-012"
+    trigger_condition: "payload.severity == 'SEV1'"
+    owner_team: "engineering"
+    priority: CRITICAL
+    dead_letter_policy: ALERT
+    status: ACTIVE
+
+  - trigger_id: "TRG-002"
+    event_type: "enterprise.incidents.WF-012.closed"
+    trigger_workflow: "WF-013"
+    trigger_condition: "payload.severity in ['SEV1', 'SEV2']"
+    owner_team: "engineering"
+    priority: HIGH
+    dead_letter_policy: ALERT
+    status: ACTIVE
+
+  - trigger_id: "TRG-003"
+    event_type: "enterprise.deployments.rollback.triggered"
+    trigger_workflow: "WF-012"
+    trigger_condition: "payload.rollback_triggered == true"
+    owner_team: "delivery"
+    priority: CRITICAL
+    dead_letter_policy: ALERT
+    status: ACTIVE
+
+  - trigger_id: "TRG-004"
+    event_type: "enterprise.incidents.recurrence.detected"
+    trigger_workflow: "WF-021"
+    trigger_condition: "payload.recurrence_count >= 2"
+    owner_team: "engineering"
+    priority: HIGH
+    dead_letter_policy: ALERT
+    status: ACTIVE
+
+  - trigger_id: "TRG-005"
+    event_type: "enterprise.teams.health.score_changed"
+    trigger_workflow: null  # alert only; no auto-workflow
+    trigger_condition: "payload.new_tier in ['DISTRESSED', 'CRITICAL']"
+    owner_team: "people"
+    priority: HIGH
+    dead_letter_policy: ALERT
+    status: ACTIVE
+
+statistics:
+  total_triggers: 5
+  active_triggers: 5
+  events_processed_today: 0
+  events_processed_30d: 0
+  dead_letter_events_30d: 0

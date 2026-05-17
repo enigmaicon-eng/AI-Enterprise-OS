@@ -1,0 +1,33 @@
+last_updated: "2026-05-14T00:00:00Z"
+
+# Latest operational health score
+operational_health:
+  latest_score: null
+  latest_status: null
+  latest_computed_at: null
+  history: []   # Ring buffer of {computed_at, composite, dimensions}
+  history_max_entries: 288   # 24h at 5-min intervals
+
+# Latest governance health score
+governance_health:
+  latest_score: null
+  latest_status: null
+  latest_computed_at: null
+  absolute_violations_active: false
+  history: []
+  history_max_entries: 288
+
+# Latest orchestration health score
+orchestration_health:
+  latest_score: null
+  latest_status: null
+  latest_computed_at: null
+  circular_delegation_active: false
+  history: []
+  history_max_entries: 288
+
+# Score baselines (computed from rolling 7-day history)
+baselines:
+  operational_health_7d_avg: null
+  governance_health_7d_avg: null
+  orchestration_health_7d_avg: null

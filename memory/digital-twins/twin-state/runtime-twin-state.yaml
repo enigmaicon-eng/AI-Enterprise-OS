@@ -1,0 +1,58 @@
+# Runtime Twin State
+# Authority: digital-twins/runtime-twin.md
+# Updated by: twin-sync.md (event-driven + scheduled batch)
+# Freshness target: 5 minutes
+
+twin_id: runtime-twin
+status: UNINITIALIZED         # UNINITIALIZED | SYNCING | STABLE | STALE | DEGRADED
+last_sync: null
+last_full_sync: null
+sync_generation: 0
+
+concurrency:
+  active_sessions: null
+  sessions_by_tier: {}
+  max_concurrent_sessions: null
+  session_utilization: null
+  orchestrator_saturation: null
+
+context_consumption:
+  avg_context_pressure_index: null
+  context_pressure_index: null       # 0.0-1.0 composite across active sessions
+  pressure_trend_24h: null
+  compaction_events_24h: null
+  sessions_hitting_limit_pct: null
+  avg_tokens_per_session: null
+
+tool_budget:
+  budget_exhaustion_rate: null       # Fraction of sessions hitting tool budget limit
+  exhaustion_rate_trend_7d: null
+  failed_calls_pct: null
+  by_tool_category: {}
+
+persistence_health:
+  ledger_write_latency_ms: null
+  checkpoint_success_rate: null
+  artifact_integrity_pct: null
+  recovery_backlog_count: null
+
+recovery_overhead:
+  recovery_overhead_fraction: null   # Fraction of capacity consumed by recovery
+  recovery_events_24h: null
+  avg_recovery_duration_minutes: null
+  by_type: {}
+
+orchestration_load:
+  routing_throughput_per_hour: null
+  routing_latency_p50_ms: null
+  routing_latency_trend: null
+  avg_delegation_chain_depth: null
+  supervisor_load_pct: null
+
+saturation_composite:
+  context_saturation: null
+  orchestrator_saturation: null
+  tool_budget_saturation: null
+  recovery_saturation: null
+  composite: null                    # max of all four
+  saturation_level: null             # NORMAL | ELEVATED | WARNING | CRITICAL

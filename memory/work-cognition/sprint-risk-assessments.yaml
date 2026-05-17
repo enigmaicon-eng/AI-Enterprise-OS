@@ -1,0 +1,3 @@
+sprint_risk_assessments:
+  assessments: []
+  # Per assessment: sprint_id, team_id, sprint_confidence, risk_level, capacity{gross/net/committed/over_commitment_pct}, high_risk_deps[], pattern_risks[], recommendations[]

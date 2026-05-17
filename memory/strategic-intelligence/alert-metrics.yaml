@@ -1,0 +1,18 @@
+# Executive Alert Metrics
+# Last updated: 2026-05-16
+# Managed by: executive-alert-system.md
+
+alert_rate_tracking:
+  P0_last_24h: 0
+  P1_rolling_7d_daily_avg: 0
+  P2_P3_daily: 0
+  acknowledged_within_sla_rate: null
+
+alert_history:
+  total_sent: 0
+  acknowledged: 0
+  escalated: 0
+  false_positives: 0
+
+last_P0_alert: null
+last_P1_alert: null

@@ -1,0 +1,5 @@
+quality_scores:
+  platform_avg: null
+  by_tier: {GOLD: 0, SILVER: 0, BRONZE: 0, POOR: 0, CRITICAL: 0}
+  entity_scores: []
+  # Per entity: entity_id, completeness, accuracy, freshness, consistency, uniqueness, composite_score, tier, trend_7d, last_checked

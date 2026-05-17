@@ -1,0 +1,24 @@
+last_updated: "2026-05-14T00:00:00Z"
+
+# Active traces (in progress)
+active_traces: {}
+# Structure: trace_id → OrchestrationTrace (partial)
+
+# Trace index (completed traces, fast lookup)
+trace_index: []
+# Structure: [{trace_id, intent_summary, started_at, ended_at, total_duration_ms, total_hops, delegation_depth, outcome}]
+# Retained: last 1000 traces (approx 7 days at moderate volume)
+
+# Trace statistics (rolling 24h)
+traces_started_today: 0
+traces_completed_today: 0
+traces_failed_today: 0
+
+avg_hops_today: null
+avg_depth_today: null
+avg_governance_overhead_ms_today: null
+p99_total_duration_ms_today: null
+
+# Longest chain detected
+max_delegation_depth_ever: 0
+max_delegation_depth_trace_id: null

@@ -1,0 +1,7 @@
+lifecycle_states:
+  by_stage: {ACTIVE: 0, AGING: 0, ARCHIVED: 0, PURGED: 0}
+  archival_queue: []
+  purge_queue: []
+  legal_holds: []
+  erasure_requests_open: 0
+  retention_sla_breaches_open: 0

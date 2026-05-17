@@ -1,0 +1,5 @@
+webhook_subscriptions:
+  total: 0
+  active: 0
+  subscriptions: []
+# Schema per subscription: subscription_id, team_id, endpoint_url (hashed), events[], tier, created_at, last_delivery, status

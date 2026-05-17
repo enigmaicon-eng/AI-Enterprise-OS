@@ -1,0 +1,31 @@
+last_updated: "2026-05-14T00:00:00Z"
+
+# Active firewall state
+active_decisions: 0
+decisions_today: 0
+
+# Threat statistics (rolling 24h)
+threat_counts:
+  PROMPT_INJECTION: 0
+  SCOPE_VIOLATION: 0
+  SENSITIVE_DATA_LEAK: 0
+  UNAUTHORIZED_TOOL_REFERENCE: 0
+  CROSS_RUN_CONTAMINATION: 0
+
+# Decision distribution
+decision_counts:
+  PASS: 0
+  WARN: 0
+  SANITIZE: 0
+  BLOCK: 0
+
+# Injection pattern registry (loaded from config at startup)
+active_injection_patterns: []
+
+# Sensitive data pattern registry
+active_credential_patterns: []
+active_pii_patterns: []
+
+# Performance
+avg_inspection_ms: 0.0
+p99_inspection_ms: 0.0

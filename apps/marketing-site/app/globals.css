@@ -1,0 +1,219 @@
+@import "tailwindcss";
+
+/* Class-based dark mode for Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* ─── Design Tokens ─────────────────────────────── */
+:root {
+  --bg:             #fafaf9;
+  --bg-card:        rgba(0, 0, 0, 0.028);
+  --bg-card-hover:  rgba(0, 0, 0, 0.048);
+  --fg:             #09090b;
+  --fg-2:           #18181b;
+  --fg-muted:       #52525b;
+  --fg-subtle:      #71717a;  /* 4.6:1 on --bg; was #a1a1aa (2.5:1) */
+  --fg-dim:         #71717a;  /* 4.6:1 on --bg; was #d4d4d8 (1.4:1) — hierarchy via size/weight */
+  --border:         rgba(0, 0, 0, 0.09);
+  --border-subtle:  rgba(0, 0, 0, 0.05);
+  --grid-line:      rgba(0, 0, 0, 0.05);
+  --indigo-glow:    rgba(99, 102, 241, 0.05);
+}
+
+.dark {
+  --bg:             #060606;
+  --bg-card:        rgba(255, 255, 255, 0.025);
+  --bg-card-hover:  rgba(255, 255, 255, 0.042);
+  --fg:             #f0f0f0;
+  --fg-2:           #e4e4e7;
+  --fg-muted:       #a1a1aa;  /* 7.9:1 on --bg; was #71717a (4.2:1) */
+  --fg-subtle:      #8a8a9a;  /* 6.0:1 on --bg; was #3f3f46 (2.0:1) */
+  --fg-dim:         #7a7a8a;  /* 4.8:1 on --bg; was #27272a (1.4:1) */
+  --border:         rgba(255, 255, 255, 0.07);
+  --border-subtle:  rgba(255, 255, 255, 0.04);
+  --grid-line:      rgba(255, 255, 255, 0.016);
+  --indigo-glow:    rgba(99, 102, 241, 0.08);
+}
+
+html {
+  color-scheme: light dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-geist-sans, system-ui, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.45s ease, color 0.35s ease;
+}
+
+/* ─── Keyframes ──────────────────────────────────────── */
+@keyframes gradient-drift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-7px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+@keyframes orbit-ccw {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes orbit-cw {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer-slide {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes theme-fade {
+  from { opacity: 0.85; }
+  to   { opacity: 1; }
+}
+
+/* ─── Reduced motion — CSS animations ──────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .animate-orbit-cw,
+  .animate-orbit-ccw,
+  .animate-gradient,
+  .animate-float,
+  .animate-pulse-soft,
+  .animate-shimmer::after {
+    animation: none !important;
+  }
+
+  body {
+    transition: none !important;
+  }
+}
+
+/* ─── Utilities ──────────────────────────────────────── */
+@layer utilities {
+
+  /* Gradient text — works on both themes */
+  .gradient-text {
+    background: linear-gradient(135deg, #818cf8 0%, #67e8f9 50%, #c4b5fd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-subtle {
+    background: linear-gradient(135deg, var(--fg-2) 0%, var(--fg-muted) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Grid backgrounds */
+  .grid-bg {
+    background-image:
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+
+  .dot-grid {
+    background-image: radial-gradient(var(--border) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  /* Surface cards */
+  .surface {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+  }
+
+  .surface-interactive {
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .surface-interactive:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border);
+  }
+
+  /* Glows — reduced in light mode via var */
+  .glow-indigo {
+    box-shadow: 0 0 100px var(--indigo-glow), 0 0 200px var(--indigo-glow);
+  }
+
+  .glow-card {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 0 0 1px var(--border-subtle);
+  }
+
+  /* Animations */
+  .animate-float      { animation: float-gentle 7s ease-in-out infinite; }
+  .animate-pulse-soft { animation: pulse-soft 3s ease-in-out infinite; }
+  .animate-orbit-cw   { animation: orbit-cw 35s linear infinite; }
+  .animate-orbit-ccw  { animation: orbit-ccw 50s linear infinite; }
+  .animate-theme-fade { animation: theme-fade 0.4s ease; }
+
+  .animate-gradient {
+    background-size: 300% 300%;
+    animation: gradient-drift 10s ease infinite;
+  }
+
+  .animate-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .animate-shimmer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, var(--bg-card-hover), transparent);
+    animation: shimmer-slide 3s ease-in-out infinite;
+  }
+
+  /* Layout */
+  .section-divider {
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  /* Label chip */
+  .label-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 13px;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    font-size: 10.5px;
+    font-family: var(--font-geist-mono);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--fg-muted);
+    white-space: nowrap;
+  }
+
+  /* Principle card */
+  .principle-card {
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  }
+
+  .principle-card:hover {
+    transform: translateY(-2px);
+  }
+}

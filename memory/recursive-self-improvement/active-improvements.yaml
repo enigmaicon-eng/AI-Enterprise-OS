@@ -1,0 +1,29 @@
+# Active Improvements Registry
+# Improvements currently in-flight (authorized but not yet measured at T+90d)
+# Updated on: proposal authorization, change application, measurement events
+
+active_improvements: []
+
+# Schema for each entry:
+# - proposal_id: IMP-{YYYY-MM-DD}-{NNN}
+#   domain: WORKFLOW | ORCHESTRATION | RUNTIME | GOVERNANCE | ORG | CAPABILITY | META
+#   title: string
+#   priority: P0 | P1 | P2 | P3 | P4
+#   status: AUTHORIZED | APPLYING | MEASURING_T7 | MEASURING_T30 | MEASURING_T90 | COMPLETE | ROLLED_BACK
+#   authorized_at: ISO8601
+#   authorized_by: string
+#   applied_at: ISO8601 | null
+#   rollback_available_until: ISO8601 | null
+#   t7_measurement_due: ISO8601 | null
+#   t7_measurement_done: boolean
+#   t30_measurement_due: ISO8601 | null
+#   t30_measurement_done: boolean
+#   t90_measurement_due: ISO8601 | null
+#   t90_measurement_done: boolean
+#   forecast_improvement_pct: float
+#   actual_improvement_pct: float | null
+#   rolled_back: boolean
+#   rollback_reason: string | null
+
+# Completed improvements awaiting T+90d measurement
+pending_measurements: []

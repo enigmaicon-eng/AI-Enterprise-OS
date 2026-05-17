@@ -1,0 +1,3 @@
+# Enterprise Workflow Execution Log
+# Append-only JSONL — one record per workflow execution
+# Format: {"execution_id": "...", "workflow_id": "WF-NNN", "initiated_at": "ISO8601", "initiated_by": "...", "status": "COMPLETED|FAILED|IN_PROGRESS", "cycle_time_days": N}

@@ -1,0 +1,17 @@
+extension_catalog:
+  total: 0
+  by_type:
+    AGENT_EXTENSION: 0
+    WORKFLOW_EXTENSION: 0
+    CONNECTOR_EXTENSION: 0
+    KNOWLEDGE_EXTENSION: 0
+    EVALUATION_EXTENSION: 0
+    TOOL_EXTENSION: 0
+    TEMPLATE_EXTENSION: 0
+  by_status:
+    ACTIVE: 0
+    STAGED: 0
+    APPROVED: 0
+    REVIEW: 0
+    SUSPENDED: 0
+  extensions: []

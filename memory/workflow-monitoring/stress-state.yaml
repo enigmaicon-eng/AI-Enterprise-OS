@@ -1,0 +1,25 @@
+last_updated: "2026-05-14T00:00:00Z"
+
+# Current stress assessments (per org)
+current_assessments: {}
+# Structure: org_id → StressAssessment record
+
+# Enterprise-level stress
+enterprise_stress_level: null
+enterprise_stress_score: null
+
+# Stress history (sustained window counts per org per indicator)
+sustained_window_counts: {}
+# Structure: "{org_id}:{indicator_id}" → consecutive_elevated_window_count
+
+# Stress event history (last 100)
+stress_event_history: []
+
+# Statistics
+orgs_with_elevated_stress: 0
+orgs_with_high_stress: 0
+orgs_with_critical_stress: 0
+
+# Intervention recommendations active
+active_recommendations: {}
+# Structure: org_id → recommendation

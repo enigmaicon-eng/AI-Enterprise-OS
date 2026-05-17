@@ -1,0 +1,15 @@
+# Active Scenario Index
+# Fast lookup — full content in scenario-planning-engine.md records
+# Last updated: 2026-05-16
+
+active_scenarios: []
+
+recently_closed: []
+
+scenario_stats:
+  total_created: 0
+  active: 0
+  closed: 0
+  capitalized: 0
+  mitigated: 0
+  missed: 0

@@ -1,0 +1,9 @@
+canary_state:
+  active_experiments: []
+  aggregate:
+    total_canaries_run: 0
+    auto_promoted: 0
+    auto_rolled_back: 0
+    human_reviewed: 0
+    avg_canary_duration_min: null
+    promotion_rate: null

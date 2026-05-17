@@ -1,0 +1,31 @@
+# Active Enterprise Workflow Executions
+# Managed by WF-023 runtime execution engine
+# Updated on every execution state change
+
+schema_version: "1.0.0"
+last_updated: null
+
+active_executions: []
+# Each entry:
+#   execution_id: string
+#   workflow_id: WF-NNN
+#   workflow_version: semver
+#   status: QUEUED|VALIDATING|EXECUTING|SUSPENDED|COMPLETING
+#   initiated_at: ISO8601
+#   initiated_by: string
+#   priority: CRITICAL|HIGH|NORMAL|LOW
+#   current_step: S-NNN
+#   completed_steps: []
+#   pending_human_tasks: []
+#   checkpoint_id: string
+#   parent_execution_id: string|null
+
+summary:
+  total_active: 0
+  by_workflow: {}
+  by_status: {}
+  by_priority:
+    CRITICAL: 0
+    HIGH: 0
+    NORMAL: 0
+    LOW: 0

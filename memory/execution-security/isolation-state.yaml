@@ -1,0 +1,49 @@
+last_updated: "2026-05-14T00:00:00Z"
+
+# Worker pool states
+worker_pools:
+  standard-pool:
+    isolation_level: STANDARD
+    classification_ceiling: INTERNAL
+    network_blocked: false
+    total_workers: 0
+    active_workers: 0
+    available_workers: 0
+
+  enhanced-pool:
+    isolation_level: ENHANCED
+    classification_ceiling: CONFIDENTIAL
+    network_blocked: false
+    total_workers: 0
+    active_workers: 0
+    available_workers: 0
+
+  strict-pool:
+    isolation_level: STRICT
+    classification_ceiling: SECRET
+    network_blocked: false
+    encrypted_comms: true
+    total_workers: 0
+    active_workers: 0
+    available_workers: 0
+
+  sandbox-pool:
+    isolation_level: SANDBOX
+    classification_ceiling: PUBLIC
+    network_blocked: true
+    output_quarantined: true
+    total_workers: 0
+    active_workers: 0
+    available_workers: 0
+
+# Active run isolation assignments
+active_assignments: {}
+# Structure: run_id → {pool, worker_id, assigned_at, isolation_level}
+
+# Context clear audit
+context_clears_today: 0
+full_wipes_today: 0
+namespace_clears_today: 0
+
+# Security events
+isolation_violations_today: 0

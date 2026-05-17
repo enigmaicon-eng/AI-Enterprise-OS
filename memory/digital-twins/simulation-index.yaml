@@ -1,0 +1,39 @@
+# Simulation Index
+# Authority: simulation-systems/simulation-engine.md
+# Written by: simulation-engine on each completed simulation
+# Purpose: fast lookup of simulation results by type, twin, and date
+
+index_version: "1.0.0"
+total_simulations: 0
+last_updated: null
+
+simulations: []
+# Each entry:
+#   simulation_id: string
+#   scenario_id: string
+#   scenario_name: string
+#   twins_used: [string]
+#   requested_by: string
+#   started_at: datetime
+#   completed_at: datetime
+#   status: RUNNING | COMPLETED | FAILED
+#   result_path: string            # memory/digital-twins/simulation-results/[id].yaml
+#   objective_type: string
+#   iterations: integer
+#   summary:
+#     primary_finding: string
+#     urgency: string
+#     top_risk: string
+
+recent_by_type:
+  staffing: null
+  governance: null
+  escalation: null
+  workflow_volume: null
+  orchestration: null
+  coordination: null
+  runtime_load: null
+  roadmap: null
+  dependency: null
+  release_risk: null
+  rollout: null

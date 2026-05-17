@@ -1,0 +1,27 @@
+last_updated: "2026-05-14T00:00:00Z"
+
+# Trigger registry (mirrors enterprise-telemetry/runtime-trigger-engine.md definitions)
+registered_triggers:
+  - operational-health-degradation
+  - governance-compliance-drop
+  - escalation-surge
+  - constitutional-violation-detected
+  - multi-org-stress
+  - integration-cascade-failure
+  - hourly-health-reassessment
+  - business-hours-status-report
+
+enabled_triggers: 8
+disabled_triggers: 0
+
+# Cooldown state
+cooldowns: {}
+# Structure: trigger_id → {cooling_until, fired_at}
+
+# Firing history (last 100 firings)
+firing_history: []
+# Structure: [{trigger_id, fired_at, condition_evidence, action_type, action_result}]
+
+# Statistics (rolling 24h)
+firings_today: 0
+firings_by_trigger: {}

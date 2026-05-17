@@ -1,0 +1,4 @@
+team_health_scores:
+  teams: []
+  org_distribution: {THRIVING: 0, STABLE: 0, STRAINED: 0, DISTRESSED: 0, CRITICAL: 0}
+  # Per team: team_id, health_score, tier, dimension_scores{sustainability/predictability/process_clarity/collaboration_health/learning_investment/interruption_load/governance_burden}, active_warnings[]

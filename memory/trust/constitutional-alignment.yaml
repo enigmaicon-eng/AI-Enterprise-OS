@@ -1,0 +1,19 @@
+initialized: "2026-05-15"
+version: "1.0.0"
+constitutional_health_score: null
+principle_compliance_rates:
+  C-001: null
+  C-002: null
+  C-003: null
+  C-004: null
+  C-005: null
+  C-006: null
+  C-007: null
+  C-008: null
+  C-009: null
+  C-010: null
+  C-011: null
+  C-012: null
+weakest_principle: null
+drift_detected: false
+last_assessment: null

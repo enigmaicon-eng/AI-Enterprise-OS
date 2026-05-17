@@ -1,0 +1,11 @@
+initialized: "2026-05-15"
+version: "1.0.0"
+connectors:
+  - id: jira; pii_access: PROHIBITED; max_classification: CONFIDENTIAL; tier_required: T1
+  - id: confluence; pii_access: PROHIBITED; max_classification: CONFIDENTIAL; tier_required: T1
+  - id: github; pii_access: PROHIBITED; max_classification: RESTRICTED; tier_required: T2
+  - id: slack; pii_access: READ_MASKED; max_classification: INTERNAL; tier_required: T1
+  - id: gmail; pii_access: READ_MASKED; max_classification: CONFIDENTIAL; tier_required: T2
+  - id: salesforce; pii_access: READ_FULL; max_classification: RESTRICTED; tier_required: T3
+  - id: snowflake; pii_access: READ_MASKED; max_classification: CONFIDENTIAL; tier_required: T2
+anomaly_events: []

@@ -1,0 +1,3 @@
+velocity_records:
+  teams: []
+  # Per team: team_id, sprints[], rolling_velocity, sustainable_velocity, stretch_velocity, variance_cv, trajectory, carry_over_rate

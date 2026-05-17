@@ -1,0 +1,9 @@
+flow_metrics_current:
+  teams: []
+  org_aggregate:
+    flow_efficiency: null
+    flow_velocity: null
+    flow_load: null
+    flow_debt: null
+    flow_predictability: null
+  # Per team: team_id, flow_efficiency, wip_count, wip_limit_recommendation, blocked_items, aging_items, cycle_time_p50, cycle_time_p95, stage_distribution{}

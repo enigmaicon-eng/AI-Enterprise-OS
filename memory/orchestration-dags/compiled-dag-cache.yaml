@@ -1,0 +1,4 @@
+compiled_dag_cache:
+  last_updated: null
+  entries: {}
+  # Each entry: definition_id+version → {compiled_at, cache_path, ttl_seconds}

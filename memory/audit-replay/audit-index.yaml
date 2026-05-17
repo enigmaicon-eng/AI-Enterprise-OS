@@ -1,0 +1,37 @@
+last_updated: "2026-05-14T00:00:00Z"
+
+# Chain metadata
+chain_head_hash: null
+chain_head_sequence: 0
+last_indexed_sequence: 0
+total_records: 0
+
+# Inverted indexes for fast query
+by_event_type: {}
+# Structure: event_type → [record_id]
+
+by_event_category: {}
+# Structure: category → [record_id]
+# Categories: EXECUTION, SECURITY, CONSTITUTIONAL, TRUST, GOVERNANCE, AUDIT
+
+by_actor_id: {}
+# Structure: actor_id → [record_id]
+
+by_run_id: {}
+# Structure: run_id → [record_id]
+
+by_outcome: {}
+# Structure: outcome → [record_id]
+
+by_severity: {}
+# Structure: severity → [record_id]
+# Severities: INFO, LOW, MEDIUM, HIGH, CRITICAL
+
+# Time-based index for range queries
+time_sequence_map: []
+# Structure: [{timestamp, sequence}] — sampled at 1-minute intervals
+
+# Chain integrity
+last_verified_at: null
+last_verification_result: null
+chain_integrity_ok: null

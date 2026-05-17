@@ -1,0 +1,12 @@
+initialized: "2026-05-15"
+version: "1.0.0"
+tier_budgets:
+  T1: {context_tokens: 50000, tool_calls: 20, delegation_depth: 1, consumed_tokens: 0}
+  T2: {context_tokens: 100000, tool_calls: 50, delegation_depth: 2, consumed_tokens: 0}
+  T3: {context_tokens: 200000, tool_calls: 100, delegation_depth: 3, consumed_tokens: 0}
+  T4: {context_tokens: 500000, tool_calls: 200, delegation_depth: 4, consumed_tokens: 0}
+  T5: {context_tokens: 1000000, tool_calls: null, delegation_depth: 5, consumed_tokens: 0}
+active_workflow_budgets: {}
+daily_token_total: 0
+monthly_token_total: 0
+budget_pressure_alerts: []

@@ -1,0 +1,283 @@
+# Enterprise Workflow Health Metrics
+# Rolling metrics per workflow — updated after each execution
+# Used by WF-021 (Workflow Optimization) for performance analysis
+
+schema_version: "1.0.0"
+last_updated: null
+observation_window_days: 90
+
+workflows:
+  WF-001:
+    name: Product Discovery
+    sla_days: 5
+    executions_total: 0
+    executions_completed: 0
+    executions_failed: 0
+    avg_cycle_time_days: null
+    p90_cycle_time_days: null
+    sla_breach_rate: null
+    gate_pass_rates: {}
+    escalation_rate: null
+    last_execution: null
+
+  WF-002:
+    name: Annual Planning
+    sla_days: 30
+    executions_total: 0
+    executions_completed: 0
+    executions_failed: 0
+    avg_cycle_time_days: null
+    p90_cycle_time_days: null
+    sla_breach_rate: null
+    gate_pass_rates: {}
+    escalation_rate: null
+    last_execution: null
+
+  WF-003:
+    name: Quarterly Planning
+    sla_days: 14
+    executions_total: 0
+    executions_completed: 0
+    executions_failed: 0
+    avg_cycle_time_days: null
+    p90_cycle_time_days: null
+    sla_breach_rate: null
+    gate_pass_rates: {}
+    escalation_rate: null
+    last_execution: null
+
+  WF-004:
+    name: Roadmap Governance
+    sla_days: 7
+    executions_total: 0
+    executions_completed: 0
+    executions_failed: 0
+    avg_cycle_time_days: null
+    p90_cycle_time_days: null
+    sla_breach_rate: null
+    gate_pass_rates: {}
+    escalation_rate: null
+    last_execution: null
+
+  WF-005:
+    name: Architecture Review
+    sla_days: 14
+    executions_total: 0
+    executions_completed: 0
+    executions_failed: 0
+    avg_cycle_time_days: null
+    p90_cycle_time_days: null
+    sla_breach_rate: null
+    gate_pass_rates: {}
+    escalation_rate: null
+    last_execution: null
+
+  WF-006:
+    name: AI Feature Delivery
+    sla_days: 21
+    executions_total: 0
+    executions_completed: 0
+    executions_failed: 0
+    avg_cycle_time_days: null
+    p90_cycle_time_days: null
+    sla_breach_rate: null
+    gate_pass_rates: {}
+    escalation_rate: null
+    last_execution: null
+
+  WF-007:
+    name: API Development
+    sla_days: 14
+    executions_total: 0
+    executions_completed: 0
+    executions_failed: 0
+    avg_cycle_time_days: null
+    p90_cycle_time_days: null
+    sla_breach_rate: null
+    gate_pass_rates: {}
+    escalation_rate: null
+    last_execution: null
+
+  WF-008:
+    name: Runtime Orchestration
+    sla_days: 0  # real-time
+    executions_total: 0
+    executions_completed: 0
+    executions_failed: 0
+    avg_cycle_time_days: null
+    p90_cycle_time_days: null
+    sla_breach_rate: null
+    gate_pass_rates: {}
+    escalation_rate: null
+    last_execution: null
+
+  WF-009:
+    name: Experimentation
+    sla_days: 14
+    executions_total: 0
+    executions_completed: 0
+    executions_failed: 0
+    avg_cycle_time_days: null
+    p90_cycle_time_days: null
+    sla_breach_rate: null
+    gate_pass_rates: {}
+    escalation_rate: null
+    last_execution: null
+
+  WF-010:
+    name: Release Governance
+    sla_days: 2
+    executions_total: 0
+    executions_completed: 0
+    executions_failed: 0
+    avg_cycle_time_days: null
+    p90_cycle_time_days: null
+    sla_breach_rate: null
+    gate_pass_rates: {}
+    escalation_rate: null
+    no_go_rate: null
+    last_execution: null
+
+  WF-011:
+    name: Rollout Governance
+    sla_days: 0  # real-time
+    executions_total: 0
+    executions_completed: 0
+    executions_failed: 0
+    rollback_rate: null
+    avg_full_rollout_time_min: null
+    soak_breach_rate: null
+    last_execution: null
+
+  WF-012:
+    name: Incident Management
+    sla_ack_min: 15
+    executions_total: 0
+    executions_completed: 0
+    mttr_sev1_avg_min: null
+    mttr_sev2_avg_min: null
+    sev1_count_30d: 0
+    sev2_count_30d: 0
+    customer_impact_pct: null
+    last_execution: null
+
+  WF-013:
+    name: Postmortem
+    sla_days: 5
+    executions_total: 0
+    executions_completed: 0
+    postmortem_completion_rate: null
+    avg_cycle_time_days: null
+    action_item_on_time_rate: null
+    recurrence_rate_90d: null
+    last_execution: null
+
+  WF-014:
+    name: Compliance Review
+    sla_days: 21
+    executions_total: 0
+    executions_completed: 0
+    avg_review_cycle_days: null
+    critical_gap_remediation_rate: null
+    control_coverage_pct: null
+    evidence_quality_score: null
+    last_execution: null
+
+  WF-015:
+    name: Stakeholder Alignment
+    sla_days: 7
+    executions_total: 0
+    executions_completed: 0
+    avg_alignment_cycle_days: null
+    escalation_rate: null
+    async_resolution_rate: null
+    decision_reversal_rate: null
+    last_execution: null
+
+  WF-016:
+    name: Dependency Coordination
+    sla_days: 5
+    executions_total: 0
+    executions_completed: 0
+    dependency_on_time_rate: null
+    avg_resolution_days: null
+    critical_path_at_risk_count: 0
+    commitment_break_rate: null
+    last_execution: null
+
+  WF-017:
+    name: Customer Escalation
+    sla_ack_hr: 4
+    executions_total: 0
+    executions_completed: 0
+    esc1_ack_rate: null
+    avg_resolution_days_esc1: null
+    churn_rate_post_esc1: null
+    last_execution: null
+
+  WF-018:
+    name: Fintech Onboarding
+    sla_days: 30
+    executions_total: 0
+    executions_completed: 0
+    avg_onboarding_days: null
+    compliance_clearance_rate: null
+    integration_success_rate: null
+    dpa_signed_at_golive: null
+    last_execution: null
+
+  WF-019:
+    name: Mortgage Onboarding
+    sla_days: 45
+    executions_total: 0
+    executions_completed: 0
+    avg_onboarding_days: null
+    nmls_verification_rate: null
+    mismo_validation_pass_rate: null
+    hmda_error_rate: null
+    last_execution: null
+
+  WF-020:
+    name: Organizational Evolution
+    sla_days: 60
+    executions_total: 0
+    executions_completed: 0
+    avg_execution_days: null
+    velocity_recovery_weeks: null
+    retention_post_change_90d: null
+    last_execution: null
+
+  WF-021:
+    name: Workflow Optimization
+    sla_days: 14
+    executions_total: 0
+    executions_completed: 0
+    optimization_cycle_time_days: null
+    improvement_achieved_rate: null
+    last_execution: null
+
+  WF-022:
+    name: Event-Driven Workflows
+    sla_days: 0  # real-time
+    triggers_registered: 0
+    events_processed_today: 0
+    dead_letter_rate: null
+    avg_event_to_workflow_latency_ms: null
+    last_updated: null
+
+  WF-023:
+    name: Runtime Execution Workflows
+    sla_days: 0  # real-time
+    executions_today: 0
+    execution_success_rate: null
+    p99_cycle_time_pct_of_sla: null
+    stuck_execution_count: 0
+    checkpoint_write_latency_ms: null
+    last_updated: null
+
+portfolio_summary:
+  total_executions_30d: 0
+  pct_workflows_meeting_sla: null
+  overall_escalation_rate: null
+  workflows_with_sla_breach: []
+  last_computed: null

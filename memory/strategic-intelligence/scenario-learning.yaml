@@ -1,0 +1,16 @@
+# Scenario Learning State
+# Last updated: 2026-05-16
+# Managed by: scenario-library.md
+
+learning_state:
+  total_scenarios_analyzed: 0
+  pattern_extraction_runs: 0
+  last_extraction: null
+
+validated_patterns: []
+
+calibration_by_scenario_type: {}
+
+most_predictive_axes: []
+
+best_hedging_actions_by_type: {}

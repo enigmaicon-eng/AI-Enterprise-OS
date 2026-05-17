@@ -1,0 +1,15 @@
+initialized: "2026-05-15"
+version: "1.0.0"
+optimizations: []
+indexes:
+  by_domain: {}
+  by_status: {}
+  by_target: {}
+  active_rollback_points: {}
+aggregate_stats:
+  total_optimizations_applied_30d: 0
+  avg_improvement_pct: 0.0
+  rollback_rate_30d: 0.0
+  total_latency_saved_ms_30d: 0
+  total_cost_saved_tokens_30d: 0
+  top_impact_domains: []

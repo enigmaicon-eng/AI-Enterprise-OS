@@ -1,0 +1,17 @@
+# Decision Learning State
+# Last updated: 2026-05-16
+# Managed by: strategic-decision-archive.md
+
+learning_state:
+  total_decisions_archived: 0
+  total_outcome_reviews_completed: 0
+  last_learning_extraction: null
+
+decision_quality_by_class: {}
+
+ai_recommendation_acceptance_rate: null
+ai_recommendation_outcome_rate: null   # % GOOD/EXCELLENT when AI rec accepted
+
+uncertainty_calibration: {}
+
+strategic_pattern_library: []

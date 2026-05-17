@@ -1,0 +1,19 @@
+# Strategic Radar State
+# Last updated: 2026-05-16
+
+radar_items:
+  P0: []
+  P1: []
+  P2: []
+  P3: []
+  P4: []
+
+radar_stats:
+  total_active: 0
+  total_closed: 0
+  capitalized: 0
+  mitigated: 0
+  missed: 0
+  false_positives: 0
+
+last_full_scan: 2026-05-16T00:00:00Z

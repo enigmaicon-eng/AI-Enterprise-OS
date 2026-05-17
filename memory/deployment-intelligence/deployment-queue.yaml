@@ -1,0 +1,9 @@
+deployment_queue:
+  pending: []
+  in_progress: []
+  stats:
+    total_deployments_all_time: 0
+    deployments_30d: 0
+    auto_approved_rate: null
+    avg_pipeline_time_min: null
+    rollback_rate_30d: 0.0

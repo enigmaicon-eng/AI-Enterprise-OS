@@ -1,0 +1,36 @@
+# Forecast Calibration State
+# Last updated: 2026-05-16
+# Managed by: outcome-probability-modeler.md
+
+calibration_state:
+  initialized: 2026-05-16
+  total_forecasts_made: 0
+  total_outcomes_resolved: 0
+
+  expected_calibration_error:
+    overall: null                     # target < 0.08
+    STRATEGIC_MARKET: null
+    COMPETITIVE: null
+    TECHNOLOGY: null
+    ORGANIZATIONAL: null
+    REGULATORY: null
+    FINANCIAL: null
+    PRODUCT: null
+    OPERATIONAL: null
+
+  brier_scores:
+    rolling_90d: null
+    by_domain: {}
+
+  bias_corrections:
+    by_domain: {}                     # applied corrections per domain
+
+  method_accuracy:
+    BASE_RATE: null
+    ANALOGICAL: null
+    STRUCTURAL: null
+    MONTE_CARLO: null
+    ENSEMBLE: null
+    DIGITAL_TWIN: null
+
+  last_calibration_run: null

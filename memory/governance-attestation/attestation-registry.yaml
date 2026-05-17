@@ -1,0 +1,50 @@
+last_updated: "2026-05-14T00:00:00Z"
+
+# Registry summary
+total_attestations: 0
+active_attestations: 0
+expired_attestations: 0
+
+# Fast lookup indexes
+by_subject_id: {}
+# Structure: subject_id → [attestation_id]
+
+by_attestation_type: {}
+# Structure: type → [attestation_id]
+# Types: EXECUTION_APPROVAL, GATE_CERTIFICATION, POLICY_COMPLIANCE,
+#        CAPABILITY_GRANT, CONSTITUTIONAL_CLEARANCE, MULTI_PARTY_AUTHORIZATION,
+#        AUDIT_CERTIFICATION
+
+by_attested_by: {}
+# Structure: attester → [attestation_id]
+
+by_run_id: {}
+# Structure: run_id → [attestation_id]
+
+# Coverage statistics by attestation type
+coverage_by_type:
+  EXECUTION_APPROVAL:
+    total: 0
+    active: 0
+  GATE_CERTIFICATION:
+    total: 0
+    active: 0
+  POLICY_COMPLIANCE:
+    total: 0
+    active: 0
+  CAPABILITY_GRANT:
+    total: 0
+    active: 0
+  CONSTITUTIONAL_CLEARANCE:
+    total: 0
+    active: 0
+  MULTI_PARTY_AUTHORIZATION:
+    total: 0
+    active: 0
+  AUDIT_CERTIFICATION:
+    total: 0
+    active: 0
+
+# Coverage gap tracking (runs with missing required attestations)
+coverage_gaps: []
+# Structure: {run_id, node_id, required_type, detected_at}

@@ -1,0 +1,23 @@
+last_updated: "2026-05-14T00:00:00Z"
+
+# Agent pair coordination stats (updated each monitoring cycle)
+pair_stats: {}
+# Structure: "{from_agent}→{to_agent}" → {handoff_success_rate, p99_latency_ms, retry_rate, mismatch_rate, sample_count}
+
+# Active coordination problems
+active_problems: []
+# Structure: [{from_agent, to_agent, problem_type, severity, detected_at}]
+
+# Failure patterns detected
+active_failure_patterns: []
+
+# Collaboration contract violations (rolling 24h)
+contract_violations_today: 0
+violations_by_contract: {}
+
+# Coordination quality trend
+coordination_health_trend: null   # IMPROVING | STABLE | DEGRADING
+
+# Context preservation scores by delegating agent
+context_preservation_scores: {}
+# Structure: agent_id → avg_context_preservation_score

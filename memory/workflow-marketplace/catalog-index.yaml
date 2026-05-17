@@ -1,0 +1,57 @@
+catalog_index:
+  total_items: 8
+  by_tier:
+    OFFICIAL: 8
+    VERIFIED: 0
+    COMMUNITY: 0
+  by_type:
+    WORKFLOW_TEMPLATE: 4
+    EVALUATION_RUBRIC: 2
+    KNOWLEDGE_PACKAGE: 2
+    AGENT_BLUEPRINT: 0
+    TOOL_EXTENSION: 0
+    CONNECTOR_EXTENSION: 0
+    KNOWLEDGE_UNIT: 0
+    EVALUATION_RUBRIC_CUSTOM: 0
+  last_updated: "2026-05-15"
+  official_items:
+    - id: OFFICIAL-WF-001
+      type: WORKFLOW_TEMPLATE
+      name: "Feature Development Starter"
+      rating: 4.8
+      installs: 47
+    - id: OFFICIAL-WF-002
+      type: WORKFLOW_TEMPLATE
+      name: "Sprint Planning Assistant"
+      rating: 4.9
+      installs: 52
+    - id: OFFICIAL-WF-003
+      type: WORKFLOW_TEMPLATE
+      name: "Architecture Review Accelerator"
+      rating: 4.7
+      installs: 31
+    - id: OFFICIAL-WF-004
+      type: WORKFLOW_TEMPLATE
+      name: "Incident Investigation Workflow"
+      rating: 4.8
+      installs: 28
+    - id: OFFICIAL-EVAL-001
+      type: EVALUATION_RUBRIC
+      name: "PRD Quality Rubric"
+      rating: 4.9
+      installs: 62
+    - id: OFFICIAL-EVAL-002
+      type: EVALUATION_RUBRIC
+      name: "Code Review Rubric"
+      rating: 4.7
+      installs: 41
+    - id: OFFICIAL-KP-001
+      type: KNOWLEDGE_PACKAGE
+      name: "Enterprise AI Governance Starter Pack"
+      rating: 4.8
+      installs: 38
+    - id: OFFICIAL-KP-002
+      type: KNOWLEDGE_PACKAGE
+      name: "Engineering Best Practices Library"
+      rating: 4.6
+      installs: 55

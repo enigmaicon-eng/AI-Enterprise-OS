@@ -1,0 +1,49 @@
+last_updated: "2026-05-14T00:00:00Z"
+
+# Key hierarchy registry
+key_registry:
+  root:
+    key_id: "root-signing-key-v1"
+    algorithm: Ed25519
+    storage: HSM
+    rotation_period_days: 365
+    status: ACTIVE
+    created_at: "2026-05-14T00:00:00Z"
+    expires_at: "2027-05-14T00:00:00Z"
+
+  subsystem_keys:
+    workflow-engine:
+      key_id: "workflow-engine-signing-key-v1"
+      parent_key_id: "root-signing-key-v1"
+      status: ACTIVE
+      created_at: "2026-05-14T00:00:00Z"
+
+    governance:
+      key_id: "governance-signing-key-v1"
+      parent_key_id: "root-signing-key-v1"
+      status: ACTIVE
+      created_at: "2026-05-14T00:00:00Z"
+
+    agent:
+      key_id: "agent-signing-key-v1"
+      parent_key_id: "root-signing-key-v1"
+      status: ACTIVE
+      created_at: "2026-05-14T00:00:00Z"
+
+    audit:
+      key_id: "audit-signing-key-v1"
+      parent_key_id: "root-signing-key-v1"
+      status: ACTIVE
+      created_at: "2026-05-14T00:00:00Z"
+
+# Active ephemeral agent keys (per-run, in-memory only — listed here for audit)
+active_ephemeral_keys: {}
+# Structure: run_id → {key_id, agent_id, created_at, expires_at}
+
+# Artifact signing statistics
+artifacts_signed_today: 0
+artifacts_verified_today: 0
+verification_failures_today: 0
+
+# Grace period keys (rotated but still valid for verification)
+grace_period_keys: []

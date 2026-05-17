@@ -1,0 +1,21 @@
+# OKR Intelligence State
+# Last updated: 2026-05-16
+# Managed by: okr-intelligence-engine.md
+
+current_quarter: 2026-Q2
+active_okr_set: null
+
+okr_health_summary:
+  total_objectives: 0
+  ON_TRACK: 0
+  WATCH: 0
+  AT_RISK: 0
+  IN_DANGER: 0
+  OFF_TRACK: 0
+  mean_achievement_probability: null
+
+strategic_coherence_score: null
+portfolio_alignment_score: null
+okr_coverage_rate: null
+
+last_calculated: 2026-05-16T00:00:00Z

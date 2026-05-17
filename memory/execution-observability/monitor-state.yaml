@@ -1,0 +1,12 @@
+monitor_state:
+  last_refreshed: null
+  cluster:
+    total_active_runs: 0
+    runs_by_state: {}
+    at_risk_runs: []
+    stalled_runs: []
+  worker_pools: {}
+  queues: {}
+  slo_status: {}
+  active_alerts: []
+  subscriptions: {}

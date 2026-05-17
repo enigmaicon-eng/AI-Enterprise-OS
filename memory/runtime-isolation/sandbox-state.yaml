@@ -1,0 +1,43 @@
+last_updated: "2026-05-14T00:00:00Z"
+
+# Active sandboxes
+active_sandboxes: {}
+# Structure: sandbox_id → {
+#   run_id, node_id, isolation_level, provisioned_at,
+#   status: PROVISIONING | ACTIVE | TERMINATED | VIOLATED,
+#   resource_limits: {cpu_cores, memory_mb, disk_mb, network_blocked}
+# }
+
+# Sandbox pool state
+sandbox_pools:
+  PROCESS:
+    available: 0
+    in_use: 0
+    total_capacity: 50
+
+  CONTAINER:
+    available: 0
+    in_use: 0
+    total_capacity: 20
+
+  VM:
+    available: 0
+    in_use: 0
+    total_capacity: 5
+
+# Quarantine queue
+quarantined_outputs: []
+# Structure: {sandbox_id, run_id, node_id, quarantined_at, reason, reviewed: false}
+
+# Security events (rolling 24h)
+security_events:
+  network_attempts_blocked: 0
+  forbidden_syscalls: 0
+  timeout_violations: 0
+  output_quarantines: 0
+
+# Adversarial test results
+adversarial_test_history: []
+# Structure: {test_run_id, timestamp, posture, injection_resistance_rate, hallucination_false_positive_rate}
+last_adversarial_test_at: null
+current_security_posture: UNTESTED

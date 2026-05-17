@@ -1,0 +1,18 @@
+last_updated: "2026-05-14T00:00:00Z"
+
+# Latest governance metric snapshot
+latest_snapshot: null
+# Structure when populated:
+# {window_start, window_end, constitutional, approvals, attestations,
+#  policy_drift, gates, security, generated_at}
+
+# Governance compliance score history (last 336 = 7 days at 30-min intervals)
+compliance_score_history: []
+
+# Constitutional principle violation tracker
+principle_violations_24h: {}
+# Structure: principle_id → violation_count
+
+# Approval chain performance cache
+approval_performance: {}
+# Structure: approval_type → {p50_ms, p90_ms, p99_ms, completion_rate}

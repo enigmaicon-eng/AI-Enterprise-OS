@@ -1,0 +1,7 @@
+version_registry:
+  # Component version records with rollback points
+  components: []
+  # Schema per component: component_id, type, current_version, previous_version, rollback_available, semver_validated, deployed_at, deployed_by
+  integrity:
+    chain_last_verified: null
+    chain_status: UNVERIFIED

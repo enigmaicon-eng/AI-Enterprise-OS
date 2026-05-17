@@ -1,0 +1,26 @@
+initialized: "2026-05-15"
+version: "1.0.0"
+baseline_established: false
+current_scores:
+  workflow_latency_p95_ms: null
+  routing_accuracy: null
+  gate_pass_rate: null
+  context_efficiency: null
+  retry_rate: null
+  escalation_rate: null
+  cost_per_workflow_tokens: null
+  bottleneck_recurrence_rate: null
+  agent_utilization_avg: null
+  governance_latency_p95_min: null
+overall_efficiency_index: null
+targets:
+  workflow_latency_improvement_pct: -20
+  routing_accuracy: 0.95
+  gate_pass_rate: 0.85
+  context_efficiency: 0.70
+  retry_rate: 0.05
+  escalation_rate: 0.08
+  cost_per_workflow_reduction_pct: -15
+  bottleneck_recurrence_rate: 0.10
+  agent_utilization_range: [0.60, 0.80]
+  governance_latency_p95_min: 30

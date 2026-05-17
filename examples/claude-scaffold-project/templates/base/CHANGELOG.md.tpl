@@ -1,0 +1,9 @@
+# Changelog
+
+Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+Versioning: [SemVer](https://semver.org/).
+
+## [Unreleased]
+
+### Added
+- Initial scaffold from scaffold-project v{{SCAFFOLD_VERSION}} on {{DATE}}.

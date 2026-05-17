@@ -1,0 +1,15 @@
+last_updated: "2026-05-14T00:00:00Z"
+
+# Latest workflow metric snapshot
+latest_snapshot: null
+# Structure when populated:
+# {snapshot_id, window_start, window_end, active_runs, starts, completions, failures,
+#  latency_distributions, gate_pass_rate, gate_pass_rate_by_gate, gate_cycles,
+#  slo_compliance_by_definition, slo_burn_rates, generated_at}
+
+# Recent snapshots (ring buffer, last 288 = 24h at 5-min intervals)
+recent_snapshots: []
+
+# SLO targets by definition_id
+slo_targets: {}
+# Structure: definition_id → {target_duration_ms, slo_compliance_target}

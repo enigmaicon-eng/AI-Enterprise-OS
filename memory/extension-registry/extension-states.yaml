@@ -1,0 +1,4 @@
+extension_states:
+  # Per-extension lifecycle state
+  # Schema: extension_id, type, version, isolation_level, state, sandbox_passed, tier_ceiling, declared_capabilities[], last_scan, violations: 0
+  states: []

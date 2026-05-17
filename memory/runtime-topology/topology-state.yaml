@@ -1,0 +1,23 @@
+last_updated: "2026-05-14T00:00:00Z"
+
+# Current topology graph
+current_graph_id: null
+current_graph_generated_at: null
+
+# Graph summary
+total_nodes: 0
+total_active_nodes: 0
+total_edges: 0
+zone_count: 5
+
+# Topology snapshots (for historical replay)
+snapshot_index: []
+# Structure: [{graph_id, generated_at, node_count, edge_count}]
+# Retained: last 96 snapshots (24h at 15-min intervals)
+
+# Node registry (fast lookup)
+node_registry: {}
+# Structure: node_id → {display_name, node_type, status, trust_zone}
+
+# Active anomalies detected
+topology_anomalies: []

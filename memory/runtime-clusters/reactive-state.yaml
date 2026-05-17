@@ -1,0 +1,5 @@
+reactive_state:
+  last_updated: null
+  rule_registry: {}
+  active_activations: {}
+  dedup_store: {}

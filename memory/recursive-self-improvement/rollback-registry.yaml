@@ -1,0 +1,32 @@
+# Rollback Registry
+# Tested rollback procedures for every applied improvement
+# Rollbacks available for 30 days post-application; archived after
+
+active_rollbacks: []
+# Schema:
+# - proposal_id: IMP-{YYYY-MM-DD}-{NNN}
+#   change_scope: FILE | SUBSYSTEM | CROSS_SYSTEM
+#   applied_at: ISO8601
+#   available_until: ISO8601  (applied_at + 30 days)
+#   change_type: PARAMETER | ALGORITHM | STRUCTURAL | ORG
+#   estimated_rollback_minutes: integer
+#   rollback_procedure:
+#     method: AUTOMATED | SHADOW_SWITCH | DAG_VERSION | MANUAL
+#     steps:
+#       - step: string
+#         automated: boolean
+#     validation_test: string (how to confirm rollback succeeded)
+#   state_snapshot_location: string (path to saved state)
+#   rollback_tested: boolean
+#   rollback_test_date: ISO8601 | null
+#   rollback_authorization_tier: T2 | T3 | T4
+
+archived_rollbacks: []
+# Same schema; moved here after available_until passes
+# Requires T4 to re-examine if rollback needed after archival
+
+registry_stats:
+  active_count: 0
+  archived_count: 0
+  rollbacks_executed_all_time: 0
+  last_rollback_executed: null

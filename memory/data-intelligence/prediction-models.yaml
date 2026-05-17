@@ -1,0 +1,36 @@
+prediction_models:
+  total: 8
+  active: 0
+  models:
+    - model_id: MDL-WORKFLOW-LOAD
+      name: Workflow Load Predictor
+      status: UNTRAINED
+      target_accuracy: "± 25%"
+    - model_id: MDL-QUALITY-DEGRADATION
+      name: Quality Degradation Classifier
+      status: UNTRAINED
+      target_accuracy: "≥ 0.80 AUROC"
+    - model_id: MDL-COMPLIANCE-RISK
+      name: Compliance Risk Classifier
+      status: UNTRAINED
+      target_accuracy: "≥ 0.75 AUROC"
+    - model_id: MDL-RESOURCE-EXHAUSTION
+      name: Resource Exhaustion Predictor
+      status: UNTRAINED
+      target_accuracy: "≥ 0.85 AUROC"
+    - model_id: MDL-AGENT-OVERLOAD
+      name: Agent Overload Predictor
+      status: UNTRAINED
+      target_accuracy: "≥ 0.80 AUROC"
+    - model_id: MDL-GOV-BOTTLENECK
+      name: Governance Bottleneck Predictor
+      status: UNTRAINED
+      target_accuracy: "± 30%"
+    - model_id: MDL-SPRINT-RISK
+      name: Sprint Risk Classifier
+      status: UNTRAINED
+      target_accuracy: "≥ 0.75 AUROC"
+    - model_id: MDL-INCIDENT-PRECURSOR
+      name: Incident Precursor Detector
+      status: UNTRAINED
+      target_accuracy: "≥ 0.70 AUROC"

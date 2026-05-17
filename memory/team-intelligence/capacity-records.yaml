@@ -1,0 +1,3 @@
+capacity_records:
+  teams: []
+  # Per team: team_id, sprint_id, gross_capacity_pts, deductions{pto/training/governance/incident_reserve}, net_capacity_pts, utilization_rate, ramp_members[]

@@ -1,0 +1,62 @@
+# Efficiency Benchmarks
+# Quarterly dimension benchmarks used by operational-efficiency-analyzer
+# Updated each quarter with rolling averages
+
+benchmark_metadata:
+  current_quarter: null
+  last_updated: null
+  quarters_of_history: 0
+
+# Current quarter benchmarks (internal — actual OS performance)
+current_benchmarks:
+  workflow_execution:
+    avg_cycle_time_hours: null
+    p95_cycle_time_hours: null
+    flow_efficiency: null  # target: >= 0.40
+    first_time_right_rate: null  # target: >= 0.80
+    rework_rate: null  # target: <= 0.15
+    gate_pass_rate: null  # target: 0.75-0.90
+
+  agent_utilization:
+    avg_utilization: null  # target: 0.60-0.80
+    idle_rate: null  # target: <= 0.20
+    overload_rate: null  # target: <= 0.10 (utilization > 0.90)
+    delegation_efficiency: null  # ratio of useful work to coordination overhead
+
+  resource_consumption:
+    cost_per_workflow_completion: null
+    cost_per_decision: null
+    token_efficiency_ratio: null  # tokens producing value / total tokens
+    infrastructure_utilization: null
+
+  quality:
+    constitutional_alignment_rate: null  # target: 1.00
+    hallucination_rate: null  # target: 0.00
+    accuracy_rate: null  # target: >= 0.95
+    correction_rate: null  # target: <= 0.05
+
+  governance:
+    approval_cycle_time_hours: null
+    compliance_pass_rate: null  # target: 1.00
+    audit_completeness: null  # target: 1.00
+
+  coordination:
+    cross_team_latency_hours: null
+    dependency_satisfaction_rate: null  # target: >= 0.90
+    escalation_rate: null  # target: <= 0.05
+
+# Benchmark history (last 4 quarters)
+quarterly_history: []
+# Schema per entry:
+# - quarter: "Q{N} {YYYY}"
+#   benchmarks: (same structure as current_benchmarks)
+#   vs_previous_quarter_pct_change: float
+#   improvement_target_met: boolean
+
+# External benchmarks (industry comparisons if available)
+external_benchmarks:
+  source: null
+  last_updated: null
+  workflow_flow_efficiency_industry_median: 0.25  # typical enterprise flow efficiency
+  agent_utilization_target_range: [0.60, 0.80]
+  first_time_right_industry_median: 0.65

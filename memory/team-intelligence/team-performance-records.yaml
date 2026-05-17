@@ -1,0 +1,5 @@
+team_performance_records:
+  total_teams_tracked: 0
+  period: null
+  records: []
+  # Per record: team_id, period, scores{delivery/quality/governance/collaboration/knowledge/velocity_stability/agent_leverage/composite}, tier, tier_change, highlights[], improvement_areas[]

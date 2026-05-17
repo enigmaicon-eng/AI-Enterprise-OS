@@ -1,0 +1,68 @@
+last_updated: "2026-05-14T00:00:00Z"
+
+# Trust zone definitions
+zones:
+  zone-external:
+    zone_id: zone-external
+    zone_name: External
+    trust_level: 5
+    description: "Untrusted external inputs and systems"
+    allowed_tiers: []
+    allows_external_ingress: true
+
+  zone-execution:
+    zone_id: zone-execution
+    zone_name: Execution
+    trust_level: 4
+    description: "T1/T2 agents performing bounded tasks"
+    allowed_tiers: [T1, T2]
+    allows_external_ingress: false
+
+  zone-orchestration:
+    zone_id: zone-orchestration
+    zone_name: Orchestration
+    trust_level: 3
+    description: "T3 agents and systems coordinating execution"
+    allowed_tiers: [T3, SYSTEM]
+    allows_external_ingress: false
+
+  zone-governance:
+    zone_id: zone-governance
+    zone_name: Governance
+    trust_level: 2
+    description: "T4 governance agents and policy systems"
+    allowed_tiers: [T4]
+    allows_external_ingress: false
+
+  zone-executive:
+    zone_id: zone-executive
+    zone_name: Executive
+    trust_level: 1
+    description: "T5 executive humans with ultimate authority"
+    allowed_tiers: [T5]
+    allows_external_ingress: false
+
+# Boundary crossing policies
+boundary_policies:
+  exec-to-gov:
+    from_zone: zone-execution
+    to_zone: zone-governance
+    requirements: [signed_payload, min_confidence_0.75, human_approval]
+    rate_limit_per_minute: 10
+
+  ext-to-exec:
+    from_zone: zone-external
+    to_zone: zone-execution
+    requirements: [firewall_pass, injection_scan]
+    rate_limit_per_minute: 100
+
+# Crossing statistics (rolling 24h)
+crossing_counts: {}
+# Structure: boundary_id → {total, allowed, denied, rate_limited}
+
+# Confidence scoring summary
+avg_confidence_scores: {}
+# Structure: boundary_id → float
+
+total_crossings_today: 0
+total_denials_today: 0

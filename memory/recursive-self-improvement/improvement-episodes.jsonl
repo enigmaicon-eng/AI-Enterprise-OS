@@ -1,0 +1,3 @@
+# Improvement Episodes — APPEND-ONLY; never modify existing lines
+# Each line is a JSON object conforming to the episodic memory schema in improvement-memory.md
+# Fields: episode_id, proposal_id, domain, opportunity_type, solution_type, context, implementation, outcomes, result, failure_reason, lessons_learned, reuse_conditions, do_not_repeat_if

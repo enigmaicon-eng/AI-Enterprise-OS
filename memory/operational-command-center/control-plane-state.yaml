@@ -1,0 +1,22 @@
+last_updated: "2026-05-14T00:00:00Z"
+
+# Emergency stop state
+emergency_stop_active: false
+emergency_stop_activated_at: null
+emergency_stop_token: null
+
+# Active routing overrides
+active_routing_overrides: []
+# Structure: [{intent_pattern, target_agent_id, applied_at, expires_at, operator_id}]
+
+# Paused orgs
+paused_orgs: []
+# Structure: [{org_id, paused_at, paused_by, reason}]
+
+# Recent control records (last 50)
+recent_control_records: []
+
+# Control action statistics (rolling 24h)
+control_actions_today: 0
+by_action_type: {}
+reversals_today: 0

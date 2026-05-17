@@ -1,0 +1,278 @@
+# Compliance Incident Management
+
+## Purpose
+Governs the identification, response, investigation, notification, and closure of compliance incidents — events that represent actual or suspected violations of regulatory obligations, enterprise policies, or compliance controls. Compliance incidents differ from ordinary findings: they are events that have already occurred (not potential gaps), often require regulatory notification within legally mandated timeframes, and may trigger legal liability. Speed, accuracy, and documentation are critical.
+
+---
+
+## Compliance Incident Definition
+
+```yaml
+incident_definition:
+  what_is_a_compliance_incident: |
+    A compliance incident is a confirmed or reasonably suspected event where:
+    (a) an enterprise regulatory obligation has been or may have been violated,
+    (b) an enterprise policy has been materially breached, or
+    (c) a control has failed in a way that has produced a harmful outcome (not merely a gap).
+  
+  distinction_from_finding: |
+    A finding documents a control gap or obligation coverage weakness.
+    An incident documents an event that has already occurred — where harm or violation
+    has happened or is happening, not merely where a gap exists.
+    The same control failure that generates a FINDING may also trigger an INCIDENT if
+    the failure caused actual exposure, breach, or regulatory violation.
+  
+  examples:
+    CONFIRMED_INCIDENTS:
+      - personal data disclosed to unauthorized party (GDPR breach)
+      - AI system made prohibited decision without human review (EU AI Act violation)
+      - DSR request not fulfilled within 30-day statutory deadline (GDPR Art.12 breach)
+      - encryption failed; data exposed in transit (data breach)
+      - prohibited AI practice confirmed active (EU AI Act Art.5 violation)
+      - sanctions screening failure (financial regulatory violation)
+    
+    SUSPECTED_INCIDENTS:
+      - unauthorized access detected; scope unknown
+      - AI output shows potential bias pattern; investigation in progress
+      - data transfer to jurisdiction without adequacy decision detected
+    
+    NOT_INCIDENTS (findings instead):
+      - control test shows access control not 100% effective (no actual unauthorized access occurred)
+      - evidence missing for a control (gap in documentation; no harmful event)
+      - policy out of date (compliance gap; no violation yet occurred)
+```
+
+---
+
+## Incident Record Schema
+
+```yaml
+compliance_incident_record:
+  incident_id: "INC-COMP-{year}-{seq}"
+  
+  classification:
+    severity: CRITICAL | HIGH | MEDIUM | LOW
+    incident_type: DATA_BREACH | REGULATORY_VIOLATION | POLICY_BREACH | AI_GOVERNANCE_VIOLATION | ACCESS_VIOLATION | FINANCIAL_REPORTING_VIOLATION | THIRD_PARTY_INCIDENT | OTHER
+    domain: DATA_PRIVACY | INFORMATION_SECURITY | AI_GOVERNANCE | OPERATIONAL | FINANCIAL | OTHER
+    affected_regulations: [regulation_id]  # which regulations are implicated?
+    affected_obligations: [obligation_id]
+    affected_controls: [control_id]
+  
+  event_description:
+    what_happened: string              # factual, specific description of the event
+    when_discovered: ISO-8601
+    when_occurred: ISO-8601 | UNKNOWN  # when did the event actually occur?
+    where_occurred: string             # system, process, location
+    who_is_affected: string            # data subjects, business units, third parties
+    estimated_scope: string            # approximate population or scale (update as investigation proceeds)
+    is_ongoing: boolean                # is the incident still occurring?
+  
+  regulatory_notification:
+    notification_required: boolean     # determined by incident type + affected regulations
+    notification_regulations: [regulation_id]  # which regulations require notification?
+    notification_deadlines: [{regulation_id, deadline_hours, deadline_timestamp}]
+    notification_status: NOT_REQUIRED | PENDING | NOTIFIED | OVERDUE
+    notifications_sent: [{regulation_id, authority_name, sent_at, delivery_confirmed}]
+    data_subject_notification_required: boolean
+    data_subject_notification_status: NOT_REQUIRED | PENDING | SENT
+  
+  response:
+    incident_lead: agent_id | human_id
+    response_team: [agent_id | human_id]
+    containment_actions: [string]      # steps taken to stop ongoing harm
+    containment_complete: boolean
+    containment_timestamp: ISO-8601 | null
+    investigation_plan: string
+    root_cause: string | null          # determined through investigation
+    root_cause_category: SYSTEM_FAILURE | PROCESS_FAILURE | HUMAN_ERROR | MALICIOUS_ACTOR | THIRD_PARTY | UNKNOWN
+  
+  evidence:
+    incident_evidence_refs: [evidence_id]   # evidence documenting the incident
+    investigation_artifacts: [string]       # investigation working papers
+    forensic_preservation_confirmed: boolean
+  
+  related_records:
+    finding_ids: [finding_id]          # findings generated by or related to this incident
+    exception_ids: [exception_id]      # exceptions that may have contributed
+    audit_event_ids: [event_id]        # relevant audit trail events
+  
+  legal:
+    legal_hold_applied: boolean        # is incident evidence under legal hold?
+    legal_counsel_engaged: boolean
+    privilege_assessment_complete: boolean
+    insurance_notified: boolean | null
+    litigation_risk: LOW | MEDIUM | HIGH | CRITICAL | UNKNOWN
+  
+  lifecycle:
+    opened_at: ISO-8601
+    opened_by: agent_id | human_id
+    contained_at: ISO-8601 | null
+    investigation_started_at: ISO-8601 | null
+    investigation_complete_at: ISO-8601 | null
+    closed_at: ISO-8601 | null
+    status: OPEN | CONTAINED | UNDER_INVESTIGATION | REMEDIATED | CLOSED | ESCALATED
+  
+  metadata:
+    created_at: ISO-8601
+    last_updated: ISO-8601
+    classification: RESTRICTED          # all compliance incidents are RESTRICTED by default
+    retained_until: ISO-8601           # 10 years for data breach; 7 years for other
+```
+
+---
+
+## Incident Severity Classification
+
+```yaml
+severity_classification:
+  CRITICAL:
+    criteria:
+      - data breach affecting > 1,000 individuals OR sensitive category data (health, biometric)
+      - confirmed prohibited AI practice (EU AI Act Art.5 violation)
+      - regulatory notification deadline at risk (< 24 hours remaining)
+      - financial regulatory violation with penalty > €1M exposure
+      - incident affecting critical infrastructure or safety systems
+    response_SLA: incident lead assigned within 30 minutes; Tier-4+ notified within 1 hour
+    regulatory_notification: treat all CRITICAL as notification-required until confirmed otherwise
+    board_notification: within 24 hours of classification
+  
+  HIGH:
+    criteria:
+      - data breach affecting < 1,000 individuals (non-sensitive category)
+      - AI governance violation (not prohibited practice; high-risk system without oversight)
+      - confirmed regulatory obligation breach (not yet under regulatory authority notice)
+      - access violation resulting in actual unauthorized data access
+    response_SLA: incident lead assigned within 2 hours; Tier-3+ notified within 4 hours
+  
+  MEDIUM:
+    criteria:
+      - policy breach without confirmed regulatory implication
+      - access violation (attempted but blocked before data access)
+      - process failure that created a brief obligation gap (now closed)
+    response_SLA: incident lead assigned within 4 hours; domain compliance lead notified within 24 hours
+  
+  LOW:
+    criteria:
+      - minor policy deviation; quickly self-corrected
+      - suspected incident that investigation confirms was not material
+    response_SLA: incident lead assigned within 1 business day; no escalation required
+  
+  severity_escalation:
+    if_scope_expands: re-classify immediately; notifications re-sent at new severity level
+    if_regulatory_notifies_enterprise: automatically escalate to CRITICAL
+```
+
+---
+
+## Regulatory Notification Protocol
+
+```yaml
+regulatory_notification:
+  notification_determination:
+    step_1: identify all regulations listed in incident_record.affected_regulations
+    step_2: for each regulation, check notification requirements:
+      GDPR_Art_33: notify supervisory authority within 72 hours of becoming aware of breach
+      GDPR_Art_34: notify data subjects when high risk to rights and freedoms
+      EU_AI_Act: notify market surveillance authority for serious incidents
+      HIPAA_Breach_Rule: notify HHS within 60 days of discovery (US scope)
+      NIS2: notify within 24 hours of significant incident; full report within 72 hours
+    step_3: determine deadline_timestamp for each applicable regulation
+    step_4: if any notification_required → engage legal counsel immediately
+  
+  notification_content_requirements:
+    GDPR_supervisory_authority:
+      required: [nature_of_breach, categories_and_approx_number_of_data_subjects, likely_consequences, measures_taken_or_proposed]
+      allowed_staged: initial notification within 72h; supplementary information permitted
+      format: per DPA's official notification form
+    
+    data_subject_notification:
+      required: [plain_language_description, contact_point, likely_consequences, measures_taken]
+      prohibited: do not include information that identifies other data subjects
+      legal_counsel_review: required before sending
+  
+  notification_execution:
+    approval_required: all notifications reviewed and approved by:
+      - legal counsel (always)
+      - compliance governance lead (always)
+      - Tier-4+ (for CRITICAL incidents)
+    delivery: sent via official channel; delivery confirmation obtained
+    logging: notification delivery logged in audit trail (REGULATORY_SUBMISSION_DELIVERED event)
+    follow_up: supplementary information filed if investigation reveals additional facts post-notification
+  
+  missed_notification_SLA:
+    consequence: automatic CRITICAL finding; potential regulatory sanction
+    action: notify authority immediately with explanation; document root cause
+    mitigation: this is not a recoverable situation; prevention is mandatory
+    prevention: SLA tracking with 50% and 75% elapsed time alerts
+```
+
+---
+
+## Incident Response Playbooks
+
+```yaml
+response_playbooks:
+  DATA_BREACH_PLAYBOOK:
+    immediate_containment: [isolate affected systems, preserve forensic state, stop ongoing data transfer]
+    first_2_hours: [confirm breach scope, classify severity, engage legal counsel, notify incident lead]
+    2_to_24_hours: [full scope investigation, regulatory notification determination, evidence preservation, legal hold]
+    24_to_72_hours: [supervisory authority notification if GDPR applies, data subject notification if required]
+    post_containment: [root cause analysis, control remediation, finding generation, lessons learned]
+  
+  AI_GOVERNANCE_VIOLATION_PLAYBOOK:
+    immediate_containment: [suspend affected AI system operation, preserve decision audit trail, document scope]
+    first_4_hours: [confirm violation type, assess prohibited_practice vs. oversight_failure, engage compliance governance lead]
+    if_prohibited_practice_confirmed:
+      action: Tier-4+ notification immediately; market surveillance authority notification assessment
+      system: do not reactivate until legal counsel + compliance governance lead clear
+    remediation: root cause → control fix → regression test → reinstatement with enhanced oversight
+  
+  ACCESS_VIOLATION_PLAYBOOK:
+    immediate_containment: [revoke unauthorized access, preserve access logs, assess data exposure]
+    investigation: [determine scope of access, identify data categories accessed, trace to root cause]
+    notification: [assess data breach threshold; notify per DATA_BREACH_PLAYBOOK if threshold met]
+    remediation: [access control fix, additional monitoring, testing]
+```
+
+---
+
+## Post-Incident Review
+
+```yaml
+post_incident_review:
+  trigger: all CRITICAL and HIGH incidents; selected MEDIUM incidents at compliance governance lead discretion
+  timing: within 10 business days of incident closure (or containment for long-running incidents)
+  
+  review_contents:
+    incident_timeline: full chronological reconstruction of events
+    root_cause_analysis: 5-why or fishbone; identify contributing and root causes
+    detection_assessment: how was the incident detected? could it have been detected sooner?
+    response_assessment: did response meet SLAs? what could improve speed or effectiveness?
+    control_gap_analysis: which control(s) failed or were absent? what controls would have prevented this?
+    regulatory_assessment: was regulatory response timely and complete?
+    lessons_learned: [specific, actionable improvements]
+    action_items: [{action, owner, due_date, tracking_id}]
+  
+  distribution: compliance governance lead + Tier-3+ + affected domain leads
+  output: post-incident review report retained 7 years (10 years for data breaches)
+  
+  systemic_pattern_detection:
+    if_3_or_more_incidents_same_root_cause_type_in_12_months:
+      action: systemic risk identified; risk register update required; board notification
+      finding: HIGH finding generated for systemic pattern
+```
+
+---
+
+## Integration Points
+
+| System | Role |
+|---|---|
+| `audit-and-evidence/finding-management.md` | Incidents generate findings; findings may escalate to incidents |
+| `audit-and-evidence/audit-trail-governance.md` | Audit trail queried to investigate incidents; legal hold applied |
+| `risk-and-controls/control-effectiveness-monitor.md` | Control failures that cause incidents trigger FAILED state |
+| `compliance-framework/regulatory-registry.md` | Notification requirements and deadlines sourced here |
+| `governance-operations/compliance-operations-dashboard.md` | Active incidents displayed in Panel 7 |
+| `governance-operations/governance-executive-reporting.md` | CRITICAL incidents included in executive reports |
+| `risk-and-controls/enterprise-risk-register.md` | Incidents update risk scores and KRI measurements |
+| `delegation-and-trust/authority-transfer-protocol.md` | Emergency authority may be invoked during CRITICAL incidents |

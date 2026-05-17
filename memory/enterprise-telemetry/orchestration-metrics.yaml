@@ -1,0 +1,20 @@
+last_updated: "2026-05-14T00:00:00Z"
+
+# Latest orchestration metric snapshot
+latest_snapshot: null
+# Structure when populated:
+# {window_start, window_end, routing, trust, authority, delegation, handoff, generated_at}
+
+# Baseline routing accuracy (for anomaly detection)
+routing_accuracy_baseline: null
+
+# Delegation depth history (detect creeping chain lengthening)
+delegation_depth_history: []
+# Structure: [{timestamp, p50_depth, p90_depth, max_depth}]
+
+# Circular delegation events (should always be 0)
+circular_delegation_count_today: 0
+
+# Agent pair performance index
+agent_pair_stats: {}
+# Structure: "{from_agent}→{to_agent}" → {handoff_success_rate, avg_latency_ms}

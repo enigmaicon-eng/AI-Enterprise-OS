@@ -1,0 +1,63 @@
+transformation_library:
+  total: 10
+  official_transformations:
+    - id: XFORM-001
+      name: ISO Date Normalizer
+      type: NORMALIZE
+      ai_powered: false
+      version: "1.0.0"
+      quality_score: null
+    - id: XFORM-002
+      name: Email Masker
+      type: ANONYMIZE
+      ai_powered: false
+      version: "1.0.0"
+      quality_score: null
+    - id: XFORM-003
+      name: Phone Normalizer
+      type: NORMALIZE
+      ai_powered: false
+      version: "1.0.0"
+      quality_score: null
+    - id: XFORM-004
+      name: Null Imputer
+      type: DERIVE_FIELD
+      ai_powered: false
+      version: "1.0.0"
+      quality_score: null
+    - id: XFORM-005
+      name: JSON Flattener
+      type: TRANSFORM
+      ai_powered: false
+      version: "1.0.0"
+      quality_score: null
+    - id: XFORM-006
+      name: Text Summarizer
+      type: SUMMARIZE
+      ai_powered: true
+      version: "1.0.0"
+      quality_score: null
+    - id: XFORM-007
+      name: Sentiment Scorer
+      type: SCORE
+      ai_powered: true
+      version: "1.0.0"
+      quality_score: null
+    - id: XFORM-008
+      name: Entity Extractor
+      type: EXTRACT_ENTITIES
+      ai_powered: true
+      version: "1.0.0"
+      quality_score: null
+    - id: XFORM-009
+      name: PII Anonymizer
+      type: ANONYMIZE
+      ai_powered: true
+      version: "1.0.0"
+      quality_score: null
+    - id: XFORM-010
+      name: Schema Version Migrator
+      type: SCHEMA_MAP
+      ai_powered: false
+      version: "1.0.0"
+      quality_score: null

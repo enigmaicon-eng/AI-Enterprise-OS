@@ -1,0 +1,27 @@
+last_updated: "2026-05-14T00:00:00Z"
+
+# Service mesh health summary
+healthy_connections: 0
+degraded_connections: 0
+open_circuit_breakers: 0
+total_connections: 0
+
+# Aggregate mesh metrics
+total_request_rate: 0.0
+mesh_error_rate: 0.0
+mesh_p99_latency_ms: 0.0
+
+# Connection registry (initialized from service-mesh-topology.md standard connections)
+connections: {}
+# Structure: connection_id → MeshConnection record
+
+# Circuit breaker states
+circuit_breakers: {}
+# Structure: connection_id → CircuitBreakerState
+
+# SLA compliance
+sla_compliant_count: 0
+sla_breaching_count: 0
+
+# Recent alerts
+recent_mesh_alerts: []

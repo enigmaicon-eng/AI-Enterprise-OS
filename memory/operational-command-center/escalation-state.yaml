@@ -1,0 +1,27 @@
+last_updated: "2026-05-14T00:00:00Z"
+
+# Active escalations
+active_escalations: {}
+# Structure: escalation_id → Escalation record
+
+# Escalation statistics (rolling 24h)
+total_escalations_today: 0
+resolved_today: 0
+expired_today: 0
+re_escalated_today: 0
+
+# By severity
+by_severity:
+  CRITICAL: {active: 0, resolved_today: 0, avg_resolution_ms: null}
+  HIGH: {active: 0, resolved_today: 0, avg_resolution_ms: null}
+  MEDIUM: {active: 0, resolved_today: 0, avg_resolution_ms: null}
+
+# SLA performance (rolling 7 days)
+sla_breach_rate_7d: null
+avg_resolution_time_ms_7d: null
+
+# Recent resolved escalations (last 20)
+recent_resolved: []
+
+# Notification history
+notifications_sent_today: 0

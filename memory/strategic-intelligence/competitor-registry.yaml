@@ -1,0 +1,15 @@
+# Competitor Registry
+# Last updated: 2026-05-16
+# Managed by: competitive-intelligence-hub.md
+
+competitors: []
+
+registry_stats:
+  total_tracked: 0
+  DIRECT: 0
+  ADJACENT: 0
+  PLATFORM: 0
+  EMERGING: 0
+  POTENTIAL_ENTRANT: 0
+
+last_full_refresh: 2026-05-16T00:00:00Z

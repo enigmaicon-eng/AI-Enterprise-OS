@@ -1,0 +1,10 @@
+initialized: "2026-05-15"
+version: "1.0.0"
+current_level: STANDARD
+entered_at: "2026-05-15T00:00:00Z"
+trigger_reason: "System initialization"
+approving_agent: "system"
+next_review_at: "2026-06-15T00:00:00Z"
+transition_history: []
+bottleneck_events_active: []
+pending_optimization_proposals: []

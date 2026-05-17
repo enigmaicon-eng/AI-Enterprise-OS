@@ -1,0 +1,15 @@
+# War Game Library
+# Last updated: 2026-05-16
+# Managed by: war-gaming-coordinator.md
+
+war_games_completed: 0
+
+red_team_playbooks: []
+
+calibration:
+  total_predictions: 0
+  confirmed_within_30d: 0
+  confirmed_within_90d: 0
+  accuracy_rate: null                   # target > 0.60
+
+competitor_behavior_models: {}

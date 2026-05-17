@@ -1,0 +1,30 @@
+# Failure Library
+# Known failure modes for improvement solutions — prevents repeated mistakes
+# Updated as failed episodes are analyzed and root causes identified
+
+failures: []
+
+# Schema for each failure record:
+# - failure_id: FAIL-{NNN}
+#   domain: WORKFLOW | ORCHESTRATION | RUNTIME | GOVERNANCE | ORG | CAPABILITY | META
+#   opportunity_type: string
+#   solution_type: string
+#   failure_mode: REGRESSION | NO_EFFECT | ROLLBACK_FAILED | SIDE_EFFECT | BLOCKED
+#   failure_conditions:
+#     - string (context conditions present when this solution failed)
+#   failure_frequency: float (rate at which this approach fails in these conditions)
+#   root_cause: string (why it fails, not just what failed)
+#   alternative: string | null (what worked instead, if known)
+#   episode_ids:
+#     - EP-{NNN}
+#   first_observed: ISO8601
+#   last_observed: ISO8601
+#   times_observed: integer
+
+# Failure library statistics
+library_stats:
+  total_failures: 0
+  failure_modes_covered: []
+  domains_covered: []
+  last_updated: null
+  coverage_rate: 0.0  # target: >= 0.80 of known failure modes documented

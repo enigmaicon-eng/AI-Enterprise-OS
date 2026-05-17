@@ -1,0 +1,75 @@
+# Forecast Calibration Registry
+# Domain-specific bias correction factors for impact forecasts
+# Updated monthly by impact-forecaster recursive calibration
+
+# Overall calibration health
+calibration_health:
+  last_calibration_run: null
+  next_calibration_due: null
+  domains_calibrated: 0
+  overall_accuracy_ratio: null  # target: 0.80-1.20
+  confidence_interval_coverage: null  # target: 0.90 (90% CI covers 90% of outcomes)
+
+# Per-domain calibration factors
+# bias_correction_factor: multiply raw forecast by this factor to get calibrated forecast
+# accuracy_ratio: actual_improvement / forecast_improvement (historical mean)
+# std_dev: standard deviation of accuracy ratios (high std_dev = high uncertainty)
+domain_calibration:
+  WORKFLOW:
+    bias_correction_factor: 1.0
+    accuracy_ratio_mean: null
+    accuracy_ratio_std_dev: null
+    sample_count: 0
+    last_updated: null
+    confidence_level: LOW  # LOW | MEDIUM | HIGH (HIGH when sample_count >= 10)
+
+  ORCHESTRATION:
+    bias_correction_factor: 1.0
+    accuracy_ratio_mean: null
+    accuracy_ratio_std_dev: null
+    sample_count: 0
+    last_updated: null
+    confidence_level: LOW
+
+  RUNTIME:
+    bias_correction_factor: 1.0
+    accuracy_ratio_mean: null
+    accuracy_ratio_std_dev: null
+    sample_count: 0
+    last_updated: null
+    confidence_level: LOW
+
+  GOVERNANCE:
+    bias_correction_factor: 1.0
+    accuracy_ratio_mean: null
+    accuracy_ratio_std_dev: null
+    sample_count: 0
+    last_updated: null
+    confidence_level: LOW
+
+  ORG:
+    bias_correction_factor: 1.0
+    accuracy_ratio_mean: null
+    accuracy_ratio_std_dev: null
+    sample_count: 0
+    last_updated: null
+    confidence_level: LOW
+
+  CAPABILITY:
+    bias_correction_factor: 1.0
+    accuracy_ratio_mean: null
+    accuracy_ratio_std_dev: null
+    sample_count: 0
+    last_updated: null
+    confidence_level: LOW
+
+  META:
+    bias_correction_factor: 1.0
+    accuracy_ratio_mean: null
+    accuracy_ratio_std_dev: null
+    sample_count: 0
+    last_updated: null
+    confidence_level: LOW
+
+# Calibration history (last 4 quarters)
+calibration_history: []

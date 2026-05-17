@@ -1,0 +1,7 @@
+skill_graph:
+  total_skill_records: 0
+  by_level: {AUTHORITY: 0, EXPERT: 0, PRACTITIONER: 0, NOVICE: 0}
+  concentration_risks_open: 0
+  stale_skills: 0
+  nodes: []
+  # Per node: agent_or_person_id, skills[{skill_id, declared_level, inferred_level, inferred_confidence, evidence_count, staleness}]

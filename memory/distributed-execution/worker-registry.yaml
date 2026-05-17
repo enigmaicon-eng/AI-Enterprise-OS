@@ -1,0 +1,20 @@
+worker_registry:
+  last_updated: null
+  workers: {}
+  pools:
+    ai-agent:
+      total: 0
+      active: 0
+      idle: 0
+      lost: 0
+    tool-runner:
+      total: 0
+      active: 0
+      idle: 0
+      lost: 0
+    human-approval:
+      total: 0
+      active: 0
+      idle: 0
+      lost: 0
+  consumer_offsets: {}

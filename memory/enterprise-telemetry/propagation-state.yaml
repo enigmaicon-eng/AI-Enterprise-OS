@@ -1,0 +1,19 @@
+last_updated: "2026-05-14T00:00:00Z"
+
+# Active event chains
+active_chains: {}
+# Structure: chain_id → {root_event_id, depth, status, started_at}
+
+# Propagation statistics (rolling 24h)
+total_events_propagated: 0
+total_deliveries: 0
+total_drops: 0
+total_failures: 0
+total_derived_events: 0
+
+# Back-pressure levels (per subscriber)
+back_pressure_state: {}
+# Structure: subscriber_id → {level, queue_depth, max_queue_depth}
+
+# Recent propagation errors
+recent_errors: []

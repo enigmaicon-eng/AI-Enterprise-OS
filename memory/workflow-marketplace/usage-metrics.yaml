@@ -1,0 +1,10 @@
+usage_metrics:
+  platform:
+    total_invocations_30d: 0
+    marketplace_quality_gate_pass_rate: null
+    avg_time_to_first_invocation_min: null
+    reuse_rate: 0.0
+    top_10_items_by_usage: []
+    fastest_growing_items: []
+  per_item: []
+  # Per-item schema: item_id, total_invocations, quality_gate_pass_rate, avg_output_quality_score, error_rate, rating_avg, rating_count, trend_30d

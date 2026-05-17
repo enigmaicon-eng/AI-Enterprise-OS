@@ -1,0 +1,7 @@
+coupling_matrix:
+  teams: []
+  pairs: []
+  # Per pair: team_a, team_b, coupling_score, classification (OVER_COUPLED|HEALTHY|ISOLATED|HEALTHY_LEAF), handoff_success_rate, dependency_health
+  over_coupled_pairs: 0
+  isolated_teams: 0
+  last_computed: null

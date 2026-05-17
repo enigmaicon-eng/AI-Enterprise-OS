@@ -1,0 +1,6 @@
+pipeline_registry:
+  total: 0
+  by_class: {STANDARD: 0, ELEVATED: 0, REGULATED: 0, CRITICAL: 0}
+  by_type: {BATCH: 0, STREAM: 0, MICRO_BATCH: 0, HYBRID: 0}
+  by_status: {ACTIVE: 0, PAUSED: 0, FAILED: 0, ARCHIVED: 0}
+  pipelines: []

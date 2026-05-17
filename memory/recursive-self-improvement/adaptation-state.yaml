@@ -1,0 +1,50 @@
+# Adaptation State
+# Per-team and system-wide adaptation capacity and change velocity tracking
+# Updated by org-adaptation-engine after each change application
+
+system_adaptation:
+  overall_capacity: 1.0  # 0.0-1.0; minimum 0.60 before new improvements allowed
+  velocity_status: GREEN  # GREEN | YELLOW | RED
+  fatigue_level: NONE  # NONE | MILD | MODERATE | SEVERE
+  adaptation_queue_depth: 0
+  last_assessment: null
+
+  # Active reductions to base capacity
+  active_reductions:
+    structural_changes_in_flight: 0   # each reduces capacity by 0.40
+    concurrent_change_count: 0        # > 3 concurrent reduces by 0.30
+    org_health_penalty: 0.0           # health < 0.60 reduces by 0.25
+    high_load_penalty: 0.0            # system_load HIGH reduces by 0.20
+    ramp_member_count: 0              # each new member reduces by 0.15
+
+  # Change velocity tracking (7-day window)
+  changes_last_7d:
+    t3_plus_count: 0  # limit: 3 per 7 days (burst prevention)
+    window_start: null
+    window_end: null
+
+  # Fatigue indicators
+  fatigue_indicators:
+    velocity_slowdown_pct: null      # > 20% slowdown from baseline
+    error_rate_spike: false          # > 30% increase
+    engagement_drop: false           # > 15% drop (if measurable)
+    consecutive_failed_changes: 0   # >= 3 = MODERATE fatigue signal
+
+# Per-team adaptation state
+teams: []
+# Schema:
+# - team_id: string
+#   team_name: string
+#   adaptation_capacity: float
+#   velocity_status: GREEN | YELLOW | RED
+#   maturity_level: 1 | 2 | 3 | 4 | 5  # REACTIVE through AMPLIFYING
+#   active_changes: integer
+#   last_assessment: ISO8601
+#   fatigue_level: NONE | MILD | MODERATE | SEVERE
+#   adaptation_queue:
+#     - proposal_id: string
+#       priority: URGENT | STRUCTURAL | WORKFLOW | TUNING
+#       queued_at: ISO8601
+
+# Maturity progression tracking
+maturity_history: []

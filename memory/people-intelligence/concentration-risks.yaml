@@ -1,0 +1,7 @@
+concentration_risks:
+  total_open: 0
+  by_severity: {CRITICAL: 0, HIGH: 0, MEDIUM: 0, LOW: 0}
+  bus_factor_1_skills: 0
+  decision_monopolies: 0
+  process_orphans: 0
+  risks: []

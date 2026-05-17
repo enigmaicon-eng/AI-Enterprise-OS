@@ -1,0 +1,32 @@
+last_updated: "2026-05-14T00:00:00Z"
+
+# Registered MCP servers
+registered_servers: {}
+# Structure per entry:
+# server_id:
+#   server_name: string
+#   trust_tier: SYSTEM | ENTERPRISE | EXTERNAL | UNTRUSTED
+#   registered_at: datetime
+#   registered_by: string
+#   allowed_tools: [string]
+#   data_classification_ceiling: string
+#   rate_limit_per_minute: integer
+#   status: ACTIVE | SUSPENDED | DEGRADED
+
+# Active access grants
+active_grants: {}
+# Structure: agent_id → [server_id]
+
+# Usage statistics (rolling 24h)
+usage_stats: {}
+# Structure: server_id → {call_count, error_count, error_rate, last_call_at}
+
+# Anomaly log
+recent_anomalies: []
+
+# Summary counts
+total_servers: 0
+active_servers: 0
+suspended_servers: 0
+total_calls_today: 0
+total_blocks_today: 0

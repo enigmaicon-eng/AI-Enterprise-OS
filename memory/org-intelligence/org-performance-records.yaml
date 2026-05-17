@@ -1,0 +1,8 @@
+org_performance_records:
+  latest:
+    period: null
+    composite_score: null
+    tier: null
+    dora_band: null
+  records: []
+  # Per record: period, scores{delivery_health/quality_posture/governance_compliance/strategic_velocity/team_health_agg/knowledge_growth/agent_adoption/composite}, tier, team_distribution, dora_metrics

@@ -1,0 +1,14 @@
+dashboard_state:
+  last_updated: null
+  fabric_health_score: null
+  ops_health_score: null
+  active_anomalies: 0
+  high_confidence_predictions: 0
+  active_patterns: 0
+  pipelines_running: 0
+  pipelines_failed_24hr: 0
+  entities_total: 0
+  entities_below_silver: 0
+  high_risk_entities_below_gold: 0
+  lineage_completeness: null
+  open_compliance_violations: 0

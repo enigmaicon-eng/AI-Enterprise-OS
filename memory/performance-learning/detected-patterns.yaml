@@ -1,0 +1,11 @@
+initialized: "2026-05-15"
+version: "1.0.0"
+active_patterns: []
+last_mine_run:
+  latency: null
+  failure: null
+  resource: null
+pattern_counts:
+  LATENCY: 0
+  FAILURE: 0
+  RESOURCE: 0

@@ -1,0 +1,11 @@
+ops_dashboard_state:
+  ops_health_score: null
+  pipeline_health: null
+  quality_health: null
+  lifecycle_health: null
+  compliance_health: null
+  last_daily_report: null
+  open_issues: 0
+  schema_drift_alerts: 0
+  stewardship_rate: null
+  contract_breaches_open: 0

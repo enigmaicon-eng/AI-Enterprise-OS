@@ -1,0 +1,6 @@
+dependency_registry:
+  total: 0
+  by_status: {ON_TRACK: 0, AT_RISK: 0, BLOCKED: 0, DELAYED: 0, DELIVERED: 0, CANCELLED: 0}
+  high_risk_count: 0
+  critical_path_slack_days: null
+  dependencies: []

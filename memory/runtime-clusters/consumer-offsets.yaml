@@ -1,0 +1,4 @@
+consumer_offsets:
+  last_updated: null
+  consumer_groups: {}
+  # Each group: topic → partition → {committed_offset, last_commit_at, consumer_id, lag}

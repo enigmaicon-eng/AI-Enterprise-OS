@@ -1,0 +1,26 @@
+last_updated: "2026-05-14T00:00:00Z"
+
+# Active subscription registry
+subscriptions: {}
+# Structure: subscription_id → Subscription record
+
+# Subscription index (fast lookup by topic)
+topic_index: {}
+# Structure: topic → [subscription_id]
+
+# Health summary
+total_subscriptions: 0
+active_subscriptions: 0
+paused_subscriptions: 0
+suspended_subscriptions: 0
+
+# Standard subscriptions (auto-registered at system startup)
+standard_subscriptions_registered: false
+
+# Delivery statistics (rolling 24h)
+total_events_delivered: 0
+total_events_dropped: 0
+total_delivery_errors: 0
+
+# Health alerts (active)
+active_health_alerts: []

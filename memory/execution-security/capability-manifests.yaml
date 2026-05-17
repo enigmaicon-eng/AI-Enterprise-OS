@@ -1,0 +1,62 @@
+last_updated: "2026-05-14T00:00:00Z"
+
+# Agent capability manifests registry
+manifests: {}
+# Structure per entry:
+# agent_id:
+#   manifest_id: string
+#   agent_name: string
+#   trust_tier: T1 | T2 | T3 | T4 | T5
+#   manifest_version: integer
+#   registered_at: datetime
+#   profile_name: string        # e.g. read_only_analyst, standard_engineer
+#   allowed_tools: [string]
+#   forbidden_tools: [string]
+#   max_classification: string
+#   governance:
+#     authority_level: integer
+#     can_approve_action_types: [string]
+#   status: ACTIVE | SUSPENDED | REVOKED
+
+# Profile definitions (canonical capability profiles)
+profiles:
+  read_only_analyst:
+    trust_tier: T1
+    authority_level: 1
+    allowed_tools: [Read, Glob, Grep, WebSearch]
+    forbidden_tools: [Write, Edit, Bash, Agent]
+    max_classification: INTERNAL
+    can_spawn_subagents: false
+
+  standard_engineer:
+    trust_tier: T2
+    authority_level: 2
+    allowed_tools: [Read, Glob, Grep, WebSearch, Write, Edit, Bash]
+    forbidden_tools: [Agent]
+    max_classification: CONFIDENTIAL
+    can_spawn_subagents: false
+
+  workflow_orchestrator:
+    trust_tier: T3
+    authority_level: 3
+    allowed_tools: [Read, Glob, Grep, WebSearch, Write, Edit, Bash, Agent]
+    max_classification: SECRET
+    can_spawn_subagents: true
+    max_spawn_depth: 4
+
+  governance_agent:
+    trust_tier: T4
+    authority_level: 4
+    max_classification: TOP_SECRET
+    can_approve_action_types: [POLICY_CHANGE, IRREVERSIBLE_ACTION]
+
+  executive:
+    trust_tier: T5
+    authority_level: 5
+    max_classification: TOP_SECRET
+    requires_approval_for: [IRREVERSIBLE_ACTIONS, EXTERNAL_COMMITMENTS]
+
+# Summary
+total_manifests: 0
+active_manifests: 0
+suspended_manifests: 0

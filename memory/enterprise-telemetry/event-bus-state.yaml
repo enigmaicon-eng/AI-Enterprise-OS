@@ -1,0 +1,85 @@
+last_updated: "2026-05-14T00:00:00Z"
+
+# Enterprise event bus state
+topics:
+  org.agent.lifecycle:
+    total_events: 0
+    consumer_groups: [agent-registry, capability-scope-controller, org-twin]
+    head_sequence: 0
+
+  org.capacity.signals:
+    total_events: 0
+    head_sequence: 0
+
+  org.escalation.events:
+    total_events: 0
+    head_sequence: 0
+
+  governance.decisions:
+    total_events: 0
+    head_sequence: 0
+
+  governance.policy.changes:
+    total_events: 0
+    head_sequence: 0
+
+  governance.constitutional:
+    total_events: 0
+    head_sequence: 0
+
+  runtime.workflow.lifecycle:
+    total_events: 0
+    head_sequence: 0
+
+  runtime.workflow.gates:
+    total_events: 0
+    head_sequence: 0
+
+  runtime.trust.signals:
+    total_events: 0
+    head_sequence: 0
+
+  runtime.security.events:
+    total_events: 0
+    head_sequence: 0
+
+  telemetry.metrics:
+    total_events: 0
+    head_sequence: 0
+
+  telemetry.health.scores:
+    total_events: 0
+    head_sequence: 0
+
+  integration.notifications:
+    total_events: 0
+    head_sequence: 0
+
+  integration.data.signals:
+    total_events: 0
+    head_sequence: 0
+
+  alerts.critical:
+    total_events: 0
+    head_sequence: 0
+
+  alerts.high:
+    total_events: 0
+    head_sequence: 0
+
+# Consumer group offsets
+consumer_offsets: {}
+# Structure: {consumer_group: {topic: last_processed_sequence}}
+
+# Active routing rules applied
+active_routing_rules: 4
+
+# Statistics (rolling 24h)
+total_events_published_today: 0
+total_events_delivered_today: 0
+total_events_dropped_today: 0
+active_subscriptions: 0
+
+# Event chain tracking
+active_chains: 0
+aborted_chains: 0

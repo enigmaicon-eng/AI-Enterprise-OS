@@ -1,0 +1,18 @@
+initialized: "2026-05-15"
+version: "1.0.0"
+last_refresh: "2026-05-15T00:00:00Z"
+efficiency_index: null
+status: INITIALIZING
+active_optimizations: 0
+pending_approvals: 0
+improvements_30d: 0
+rollbacks_30d: 0
+top_cost_recommendations: []
+active_bottleneck_alerts: []
+efficiency_trends:
+  latency_p95_7d_delta_pct: null
+  routing_accuracy_7d_delta_pct: null
+  retry_rate_7d_delta_pct: null
+  context_efficiency_7d_delta_pct: null
+  gate_pass_rate_7d_delta_pct: null
+  cost_per_run_7d_delta_pct: null

@@ -1,0 +1,8 @@
+installed_items:
+  # Per-team installed marketplace item records
+  # Schema: team_id, item_id, version, installed_at, installed_by, status: ACTIVE|STAGED|ROLLED_BACK
+  installations: []
+  aggregate:
+    total_active_installations: 0
+    teams_with_installations: 0
+    avg_items_per_team: 0

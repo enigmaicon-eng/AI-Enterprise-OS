@@ -1,0 +1,26 @@
+last_updated: "2026-05-14T00:00:00Z"
+
+# Active replay sessions
+active_replays: {}
+# Structure: replay_id → {
+#   run_id, requested_by, started_at, status: IN_PROGRESS | COMPLETE | FAILED,
+#   records_replayed, records_total, current_sequence
+# }
+
+# Completed replay summary
+completed_replays: []
+# Structure: {replay_id, run_id, completed_at, outcome_changes_count,
+#             original_permissive_errors, original_restrictive_errors,
+#             consistency_rate}
+
+# Policy reconstruction cache
+policy_cache: {}
+# Structure: policy_id → [{target_time, policy_version, policy_hash, cached_at}]
+
+# Compliance window reports (recent)
+recent_compliance_reports: []
+# Structure: {report_id, window_start, window_end, generated_at,
+#             constitutional_compliance_score, gate_pass_rate, chain_integrity}
+
+total_replays_completed: 0
+total_outcome_reversals_found: 0

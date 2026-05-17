@@ -1,0 +1,14 @@
+initialized: "2026-05-15"
+version: "1.0.0"
+last_refresh: "2026-05-15T00:00:00Z"
+status: INITIALIZING
+avg_output_quality: null
+gate_pass_rate: null
+gate_fail_rate: null
+evaluation_coverage_pct: null
+constitutional_violations_30d: 0
+hallucination_events_7d: 0
+unreliable_agents_count: 0
+governance_decision_quality: null
+override_rate: null
+regret_rate: null

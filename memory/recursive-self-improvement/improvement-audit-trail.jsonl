@@ -1,0 +1,5 @@
+# Improvement Audit Trail — APPEND-ONLY; tamper-evident hash chain
+# Each line is a JSON object conforming to the audit_event schema in improvement-audit-trail.md
+# Fields: event_id, event_type, timestamp, proposal_id, actor, event_data, prior_event_id, event_hash, signature
+# Genesis event: AUD-2026-00001 (system initialization 2026-05-16)
+{"event_id":"AUD-2026-00001","event_type":"SYSTEM_INIT","timestamp":"2026-05-16T00:00:00.000Z","proposal_id":null,"actor":{"type":"SYSTEM","identity":"recursive-self-improvement-init","tier":"AUTO"},"event_data":{"summary":"Recursive Self-Improvement System initialized","details":{"version":"1.0.0","os_version":"v26.0.0","components_initialized":["RSI-CORE-001","RSI-CORE-002","RSI-CORE-003","RSI-CORE-004","RSI-CORE-005","RSI-OPT-001","RSI-OPT-002","RSI-OPT-003","RSI-OPT-004","RSI-EVO-001","RSI-EVO-002","RSI-EVO-003","RSI-HE-001","RSI-HE-002","RSI-HE-003","RSI-HE-004","RSI-REC-001","RSI-REC-002","RSI-REC-003","RSI-REC-004","RSI-GOV-001","RSI-GOV-002","RSI-GOV-003","RSI-GOV-004"]}},"prior_event_id":null,"event_hash":"GENESIS","signature":"GENESIS"}

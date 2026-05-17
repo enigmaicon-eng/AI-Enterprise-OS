@@ -1,0 +1,71 @@
+# Prediction Accuracy Tracking
+# Authority: predictive-intelligence/prediction-engine.md
+# Updated when: verified_at reached for any prediction
+
+# Target: calibration >= 0.80 (80% of actuals within p10-p90 range)
+# Target: MAE < 10% relative error for 30-day forecasts
+# Recalibration trigger: calibration < 0.60 for any class
+
+accuracy_by_class:
+  org_health:
+    total_predictions: 0
+    verified_predictions: 0
+    calibration_rate: null        # Fraction where p10 <= actual <= p90
+    mae_relative: null            # Mean absolute error / actual value
+    last_recalibrated: null
+
+  capacity:
+    total_predictions: 0
+    verified_predictions: 0
+    calibration_rate: null
+    mae_relative: null
+    last_recalibrated: null
+
+  delivery:
+    total_predictions: 0
+    verified_predictions: 0
+    calibration_rate: null
+    mae_relative: null
+    last_recalibrated: null
+
+  release_readiness:
+    total_predictions: 0
+    verified_predictions: 0
+    calibration_rate: null
+    mae_relative: null
+    last_recalibrated: null
+
+  bottleneck:
+    total_predictions: 0
+    verified_predictions: 0
+    calibration_rate: null
+    mae_relative: null
+    last_recalibrated: null
+
+  governance_risk:
+    total_predictions: 0
+    verified_predictions: 0
+    calibration_rate: null
+    mae_relative: null
+    last_recalibrated: null
+
+  runtime_saturation:
+    total_predictions: 0
+    verified_predictions: 0
+    calibration_rate: null
+    mae_relative: null
+    last_recalibrated: null
+
+  quality_degradation:
+    total_predictions: 0
+    verified_predictions: 0
+    calibration_rate: null
+    mae_relative: null
+    last_recalibrated: null
+
+overall:
+  total_predictions: 0
+  verified_predictions: 0
+  overall_calibration_rate: null
+  classes_needing_recalibration: []
+  last_accuracy_review: null

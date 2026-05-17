@@ -1,0 +1,59 @@
+# Org Twin State
+# Authority: digital-twins/org-twin.md
+# Updated by: twin-sync.md (event-driven + scheduled batch)
+# Freshness target: 15 minutes
+
+twin_id: org-twin
+status: UNINITIALIZED         # UNINITIALIZED | SYNCING | STABLE | STALE | DEGRADED
+last_sync: null
+last_full_sync: null
+sync_generation: 0
+
+organizational_units: []
+
+agents: []
+
+escalation_state:
+  current_arrival_rate: null
+  arrival_rate_trend: null
+  resolution_rate: null
+  active_resolvers: 0
+  queue_depth: 0
+  queue_depth_trend: null
+  sla_compliance_by_class:
+    CRITICAL: null
+    HIGH: null
+    MEDIUM: null
+    LOW: null
+  sla_compliance_trend_7d:
+    CRITICAL: null
+    HIGH: null
+    MEDIUM: null
+    LOW: null
+  resolution_quality_score: null
+  resolution_quality_trend: null
+  escalation_reopen_rate: null
+
+governance_state:
+  active_policies: []
+  violation_rates: {}
+  exception_log: []
+  gate_compliance_history: []
+
+derived_metrics:
+  org_health_score: null
+  org_capacity_utilization: null
+  org_capacity_theoretical: null
+  org_capacity_effective: null
+  throughput_trend_7d: null
+  escalation_rate_7d: null
+  gate_pass_rate_7d: null
+
+org_health:
+  org_health_score: null
+  capacity_health: null
+  quality_health: null
+  velocity_health: null
+  governance_health: null
+  score_history: []
+  utilization_history_30d: []

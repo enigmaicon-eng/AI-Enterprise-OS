@@ -1,0 +1,43 @@
+# Improvement Cycle State
+# Current state of the active improvement cycle
+# Updated at each phase transition
+
+cycle_id: null
+cycle_number: 0
+cycle_status: IDLE  # IDLE | OBSERVE | ANALYZE | PLAN | VALIDATE | AUTHORIZE | APPLY | MEASURE | META-IMPROVE | PAUSED | HALTED
+cycle_started_at: null
+cycle_phase_started_at: null
+current_phase_sla_deadline: null
+
+phase_history: []
+
+# Most recent completed cycle summary
+last_completed_cycle:
+  cycle_id: null
+  cycle_number: 0
+  started_at: null
+  completed_at: null
+  duration_hours: null
+  proposals_generated: 0
+  proposals_approved: 0
+  proposals_applied: 0
+  proposals_rejected: 0
+  primary_metric_gain_pct: null
+
+# System status
+system_status: OPERATIONAL  # OPERATIONAL | DEGRADED | PAUSED | HALTED
+halt_reason: null
+halt_timestamp: null
+pause_reason: null
+pause_timestamp: null
+resume_authorized_by: null
+
+# Quarterly metrics
+quarterly_metrics:
+  quarter: null
+  t5_changes_applied: 0
+  t4_changes_applied: 0
+  t3_changes_applied: 0
+  auto_t2_changes_applied: 0
+  burst_window_changes_last_7d: 0
+  last_burst_window_reset: null

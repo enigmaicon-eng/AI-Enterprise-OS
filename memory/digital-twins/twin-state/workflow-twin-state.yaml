@@ -1,0 +1,56 @@
+# Workflow Twin State
+# Authority: digital-twins/workflow-twin.md
+# Updated by: twin-sync.md (event-driven + scheduled batch)
+# Freshness target: 10 minutes
+
+twin_id: workflow-twin
+status: UNINITIALIZED         # UNINITIALIZED | SYNCING | STABLE | STALE | DEGRADED
+last_sync: null
+last_full_sync: null
+sync_generation: 0
+
+portfolio:
+  total_active: null
+  by_type: {}
+  in_progress_count: null
+  completed_last_30d: null
+  new_items_per_day_30d_avg: null
+  completed_per_day_30d_avg: null
+
+step_performance:
+  by_step_type: {}
+  avg_duration_p50: null
+  avg_duration_p90: null
+  slowest_steps: []
+
+gate_performance:
+  overall_pass_rate: null
+  pass_rate_history_30d: []
+  avg_gate_cycles: null
+  avg_cycles_history_30d: []
+  retry_rate: null
+  retry_rate_history_30d: []
+  fail_rate_by_type: {}
+  most_failed_criteria_by_type: {}
+
+flow_efficiency:
+  flow_efficiency_ratio: null
+  efficiency_history_30d: []
+  avg_lead_time_days: null
+  avg_cycle_time_days: null
+  wait_time_pct: null
+  rework_rate: null
+  rework_rate_history_30d: []
+  lead_time_7d_trend: null
+
+failure_analysis:
+  overall_failure_rate: null
+  failure_rate_history_30d: []
+  defect_rate_history_30d: []
+  by_type: {}             # F1-F9 distribution
+
+velocity_signals:
+  throughput_trend_30d: []
+  throughput_trend_7d: null
+  tech_debt_velocity: null
+  recent_gate_fail_cluster: false

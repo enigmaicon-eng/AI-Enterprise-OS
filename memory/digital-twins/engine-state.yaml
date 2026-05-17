@@ -1,0 +1,43 @@
+# Twin Engine State
+# Authority: digital-twins/twin-engine.md
+# Written by: twin-engine on each cycle
+
+engine_version: "1.0.0"
+engine_status: UNINITIALIZED    # UNINITIALIZED | RUNNING | IDLE | ERROR
+last_cycle: null
+next_cycle: null
+cycle_count: 0
+
+twin_registry:
+  org-twin:
+    status: UNINITIALIZED
+    last_sync: null
+    sync_lag_minutes: null
+    health: UNKNOWN
+  workflow-twin:
+    status: UNINITIALIZED
+    last_sync: null
+    sync_lag_minutes: null
+    health: UNKNOWN
+  delivery-twin:
+    status: UNINITIALIZED
+    last_sync: null
+    sync_lag_minutes: null
+    health: UNKNOWN
+  runtime-twin:
+    status: UNINITIALIZED
+    last_sync: null
+    sync_lag_minutes: null
+    health: UNKNOWN
+
+active_simulations: []
+
+last_prediction_report: null
+prediction_report_count: 0
+
+anomalies_detected_this_cycle: []
+
+engine_health:
+  all_twins_stable: false
+  degraded_twins: []
+  last_error: null
