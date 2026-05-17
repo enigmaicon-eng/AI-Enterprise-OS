@@ -41,9 +41,19 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto mt-10 pt-8 border-t border-[var(--border-subtle)] flex items-center justify-between">
+      <div className="max-w-6xl mx-auto mt-10 pt-8 border-t border-[var(--border-subtle)] flex items-center justify-between gap-4">
         <p className="text-[var(--fg-subtle)] text-xs font-mono">© 2026 AI Enterprise OS</p>
-        <p className="text-[var(--fg-subtle)] text-xs font-mono">All rights reserved</p>
+        <p className="text-[var(--fg-subtle)] text-xs font-mono">
+          <a
+            href="https://github.com/enigmaicon-eng/AI-Enterprise-OS/blob/main/LICENSE"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[var(--fg-muted)] transition-colors"
+          >
+            MIT Licensed
+          </a>
+          {" · "}Open Source
+        </p>
       </div>
     </footer>
   );

@@ -17,6 +17,7 @@ export function Nav() {
 
   const links = [
     { label: "Architecture", href: "#architecture" },
+    { label: "Cognition",    href: "#cognition" },
     { label: "Governance",   href: "#governance" },
     { label: "Research",     href: "#research" },
   ];

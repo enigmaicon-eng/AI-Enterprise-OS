@@ -59,8 +59,9 @@ export function Vision() {
           transition={{ duration: 0.8, delay: 0.38 }}
           className="text-[var(--fg-subtle)] text-base max-w-lg mx-auto mb-16"
         >
-          Where the organization thinks, learns, coordinates, and adapts as one —
-          governed by structures that guarantee human authority is permanent.
+          Where the organization executes, learns from execution, and compounds
+          that learning into permanent institutional intelligence —
+          governed by structures that guarantee human authority is never delegated away.
         </motion.p>
 
         <motion.div

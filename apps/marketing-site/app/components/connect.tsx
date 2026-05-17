@@ -7,7 +7,7 @@ const LINKS = [
   {
     id: "github",
     label: "GitHub",
-    sub: "Source & architecture",
+    sub: "Source, architecture · MIT License",
     href: "https://github.com/enigmaicon-eng/AI-Enterprise-OS",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">

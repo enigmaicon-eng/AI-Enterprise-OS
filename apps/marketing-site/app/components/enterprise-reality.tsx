@@ -49,14 +49,14 @@ const USE_CASES = [
   {
     id: "memory",
     title: "Organizational Memory",
-    body: "Decisions, rationale, and institutional knowledge persisted as a living graph — accessible to every future agent.",
+    body: "Decisions, rationale, and institutional knowledge encoded as permanent organizational memory — with cognitive lineage traceable across agent generations.",
     icon: "○",
     color: "#10b981",
   },
   {
     id: "adaptive-ops",
     title: "Adaptive Operations",
-    body: "Operational playbooks that update based on observed outcomes, not just manually authored rules.",
+    body: "Routing, delegation, and coordination patterns that improve with observed outcomes — heuristics refined within governance bounds, never outside them.",
     icon: "◎",
     color: "#fb923c",
   },

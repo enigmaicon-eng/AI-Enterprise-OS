@@ -6,7 +6,7 @@ import { useTheme } from "./theme-provider";
 
 const R = 70;
 const NODES = [
-  { id: "cognition",     angle: -90, label: "Cognition Engine",    sub: "Graph-based reasoning and strategic intelligence across all enterprise domains.", color: "#818cf8" },
+  { id: "cognition",     angle: -90, label: "Adaptive Cognition",   sub: "Longitudinal organizational learning with heuristic evolution, strategic memory, and reasoning history — compounding intelligence across every operational cycle.", color: "#818cf8" },
   { id: "orchestration", angle: -30, label: "Coordination Layer",  sub: "Hundreds of specialized agents coordinated through structured execution contracts.", color: "#34d399" },
   { id: "governance",    angle:  30, label: "Governance Substrate", sub: "Authority structures with immutable human oversight at every execution level.", color: "#a78bfa" },
   { id: "security",      angle:  90, label: "Security Layer",      sub: "Zero-trust architecture, adversarial defense, and sovereign data partitioning.", color: "#f59e0b" },

@@ -7,7 +7,7 @@ const AREAS = [
   {
     id: "cognition",
     title: "Enterprise Cognition",
-    body: "How organizations reason and generate actionable intelligence across distributed agents and knowledge domains.",
+    body: "Adaptive reasoning architectures — reflection engines, heuristic evolution, strategic memory — that compound organizational intelligence across operational cycles.",
     tag: "active",
     color: "#818cf8",
   },
@@ -49,9 +49,16 @@ const AREAS = [
   {
     id: "org-systems",
     title: "Organizational Systems",
-    body: "Modeling enterprises as adaptive systems — where coordination and cognition are first-class infrastructure.",
-    tag: "exploratory",
+    body: "Enterprises modeled as adaptive systems — with cognitive lineage, governance-aware learning, and longitudinal memory that outlasts any single deployment.",
+    tag: "active",
     color: "#10b981",
+  },
+  {
+    id: "runtime-learning",
+    title: "Runtime Learning",
+    body: "How AI systems can safely improve their own execution patterns — bounded adaptation, auditable heuristic evolution, and institutional knowledge formation at runtime.",
+    tag: "active",
+    color: "#fb923c",
   },
 ];
 

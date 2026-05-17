@@ -82,7 +82,9 @@ export function Founder() {
               </p>
               <p className="text-[var(--fg-subtle)] text-sm leading-relaxed">
                 The architecture here is a working attempt to solve the memory, governance, and
-                coordination problems that make enterprise AI brittle in practice.
+                coordination problems that make enterprise AI brittle in practice — including
+                the adaptive cognition layer that lets the system learn from its own operational
+                history without escaping governance constraints.
               </p>
             </div>
 

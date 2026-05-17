@@ -19,11 +19,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
   title: "AI Enterprise OS — Runtime Infrastructure for Adaptive Enterprises",
   description:
-    "The operating layer for enterprises that need to coordinate intelligence at scale. Persistent memory, structured governance, and multi-agent coordination.",
-  keywords: ["enterprise AI", "AI runtime", "enterprise intelligence", "governance", "multi-agent coordination"],
+    "The operating layer for enterprises that need to coordinate intelligence at scale. Persistent memory, adaptive cognition, structured governance, and multi-agent coordination.",
+  keywords: ["enterprise AI", "AI runtime", "enterprise intelligence", "governance", "multi-agent coordination", "adaptive cognition", "organizational learning", "runtime evolution"],
   openGraph: {
     title: "AI Enterprise OS",
-    description: "Runtime infrastructure for adaptive enterprises.",
+    description: "Runtime infrastructure for adaptive enterprises. Longitudinal organizational learning built into the substrate.",
     type: "website",
   },
 };

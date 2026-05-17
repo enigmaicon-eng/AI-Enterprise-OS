@@ -105,7 +105,7 @@ export function Hero() {
         >
           {[
             { n: "50+",  label: "Enterprise connectors" },
-            { n: "100+", label: "Coordinated agents" },
+            { n: "144",  label: "Coordinated agents" },
             { n: "∞",    label: "Organizational memory" },
           ].map((s, i) => (
             <div key={i} className="text-center">

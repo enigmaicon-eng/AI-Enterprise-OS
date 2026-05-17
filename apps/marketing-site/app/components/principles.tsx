@@ -34,6 +34,12 @@ const PRINCIPLES = [
     body: "A system that governs itself must apply the same constraints to its own evolution. Alignment that degrades under modification is not alignment.",
     color: "#f472b6",
   },
+  {
+    index: "06",
+    title: "Intelligence compounds over time.",
+    body: "Organizational learning is infrastructure. Systems that reflect, retain, and refine their own reasoning build durable institutional intelligence — not ephemeral task execution.",
+    color: "#fb923c",
+  },
 ];
 
 export function Principles() {
@@ -91,22 +97,16 @@ export function Principles() {
             </motion.div>
           ))}
 
-          {/* Sixth cell spacer */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.6, delay: 0.55 }}
-            className="bg-[var(--bg)] p-8 hidden lg:flex items-end"
-          >
-            <p className="text-[var(--fg-dim)] text-[11px] font-mono leading-relaxed max-w-[160px]">
-              These are not aspirations.
-              <br />
-              They are constraints on every
-              <br />
-              design decision in this system.
-            </p>
-          </motion.div>
         </div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6, delay: 0.65 }}
+          className="text-[var(--fg-dim)] text-[11px] font-mono mt-6 text-right"
+        >
+          These are not aspirations — they are constraints on every design decision in this system.
+        </motion.p>
       </div>
     </section>
   );

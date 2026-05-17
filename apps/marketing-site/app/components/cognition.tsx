@@ -14,8 +14,8 @@ const CAPABILITIES = [
     body: "Market, operational, and competitive signals synthesized simultaneously across planning horizons.",
   },
   {
-    label: "Adaptive coordination",
-    body: "Specialized agents work through structured rules and runtime context — not rigid scripts that break when conditions change.",
+    label: "Organizational learning",
+    body: "The system reflects on execution cycles, refines heuristics within governance bounds, and encodes durable institutional knowledge that compounds across agent generations.",
   },
   {
     label: "Enterprise simulation",
@@ -50,7 +50,7 @@ export function Cognition() {
     : "rgba(99,102,241,0.14)";
 
   return (
-    <section className="relative py-40 px-6 section-divider overflow-hidden">
+    <section id="cognition" className="relative py-40 px-6 section-divider overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           {/* Left */}
@@ -60,15 +60,16 @@ export function Cognition() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="label-tag mb-8">Intelligence Layer</div>
+            <div className="label-tag mb-8">Adaptive Intelligence</div>
             <h2 className="text-4xl sm:text-5xl font-semibold tracking-tight text-[var(--fg)] mb-6 leading-[1.07]">
               The enterprise
               <br />
               <span className="gradient-text">learns continuously.</span>
             </h2>
             <p className="text-[var(--fg-muted)] text-lg leading-relaxed mb-12">
-              A live model of the organization — one that builds, retains,
-              and reasons across everything it knows.
+              A live model of the organization — one that reflects on its own
+              execution, retains what it learns, and evolves its reasoning
+              within governance-enforced bounds.
             </p>
 
             <div className="space-y-6">
