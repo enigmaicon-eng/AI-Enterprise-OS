@@ -1,0 +1,13 @@
+{
+  "name": "agent-teams",
+  "version": "1.3.0",
+  "description": "Multi-agent team presets with 6 agents, 5 skills, and 3 team workflows for idea validation, PRD review, and competitive analysis",
+  "repository": "https://github.com/slgoodrich/agents",
+  "homepage": "https://github.com/slgoodrich/agents/tree/main/plugins/agent-teams",
+  "keywords": ["multi-agent", "validation", "prd-review", "competitive-analysis", "agent-teams"],
+  "author": {
+    "name": "Steve Goodrich",
+    "email": "slgoodrich@users.noreply.github.com"
+  },
+  "license": "PolyForm-Noncommercial-1.0.0"
+}
